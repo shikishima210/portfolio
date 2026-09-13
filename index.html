@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>杉島輝 ポートフォリオ — グラフィック × プロダクト / 28卒</title>
+<meta name="description" content="名古屋文理大学 情報メディア学科3年 杉島輝のポートフォリオ。グラフィックデザインとプロダクトデザイン。大学の広報物として採用された制作物5点を掲載。2028年3月卒業見込。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3f1ea;
+    --paper-2:#fbfaf6;
+    --ink:#121110;
+    --ink-2:#4c4942;
+    --ink-3:#8b877e;
+    --line:rgba(18,17,16,.18);
+    --line-2:rgba(18,17,16,.09);
+    --yellow:#f2c94c;
+    --pink:#ec5f8f;
+    --blue:#3f7fe0;
+    --green:#62b56a;
+    --orange:#ef7f3c;
+    --black:'Archivo Black', sans-serif;
+    --sans:'Archivo', sans-serif;
+    --jp:'Zen Kaku Gothic New', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--jp); font-weight:300; color:var(--ink); line-height:1.9; letter-spacing:.02em;
+    background:var(--paper); -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%;}
+  button{font:inherit; color:inherit;}
+  :focus-visible{outline:2px solid var(--pink); outline-offset:3px;}
+  ::selection{background:var(--yellow);}
+
+  .crayon{fill:none; stroke-linecap:round; stroke-linejoin:round; filter:url(#wob);}
+  .doodle{position:absolute; pointer-events:none; z-index:1; overflow:visible;}
+  @keyframes sway{0%,100%{transform:rotate(-2deg);} 50%{transform:rotate(2deg);}}
+  .sway{animation:sway 8s ease-in-out infinite;}
+
+  .lbl{font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--ink-3);}
+  .tag{display:inline-block; font-family:var(--sans); font-weight:700; font-size:9.5px;
+    letter-spacing:.14em; text-transform:uppercase; border:1.5px solid var(--ink);
+    border-radius:999px; padding:3px 11px;}
+  .tag.adopted{background:var(--yellow);}
+  .tag.g-graphic{background:var(--pink); color:#fff; border-color:var(--pink);}
+  .tag.g-product{background:var(--blue); color:#fff; border-color:var(--blue);}
+  .tag.g-web{background:var(--green); color:#fff; border-color:var(--green);}
+  .tag.g-3dcg{background:var(--orange); color:#fff; border-color:var(--orange);}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:120;
+    display:flex; align-items:center; gap:18px; padding:11px clamp(16px,4vw,48px);
+    background:rgba(243,241,234,.95); backdrop-filter:blur(8px);
+    border-bottom:1.5px solid var(--ink);
+  }
+  header .mark{font-family:var(--black); font-size:12.5px; white-space:nowrap;}
+  header .sub{font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink-3); white-space:nowrap;}
+  header nav{margin-left:auto; display:flex; gap:6px;}
+  header nav a{font-family:var(--sans); font-weight:700; font-size:9.5px; letter-spacing:.14em;
+    text-transform:uppercase; border:1.5px solid var(--ink); border-radius:999px; padding:5px 12px;}
+  header nav a:hover{background:var(--ink); color:var(--paper);}
+  .progress{position:fixed; top:0; left:0; height:3px; width:0%; background:var(--pink); z-index:130;}
+
+  .wrap{max-width:1280px; margin:0 auto; padding:0 clamp(16px,4vw,48px);}
+
+  /* ---------- 1. TOP ---------- */
+  .top{position:relative; padding:clamp(84px,12vh,130px) 0 clamp(30px,5vh,54px); overflow:hidden;}
+  .top .row1{display:flex; align-items:flex-end; gap:clamp(16px,3vw,40px); flex-wrap:wrap;}
+  .top h1{font-family:var(--black); font-size:clamp(34px,6.4vw,80px); line-height:.95; letter-spacing:-.035em;}
+  .top h1 .jp{display:block; font-family:var(--jp); font-weight:700; font-size:clamp(17px,2.4vw,28px);
+    letter-spacing:.3em; margin-top:12px;}
+  .top .who{display:flex; flex-direction:column; gap:7px; padding-bottom:6px;}
+  .top .who b{font-family:var(--sans); font-weight:700; font-size:clamp(11px,1.5vw,14px); letter-spacing:.1em;}
+  .top .who span{font-size:12.5px; color:var(--ink-2);}
+
+  .claim{
+    margin-top:clamp(26px,4vh,44px); display:flex; align-items:stretch; flex-wrap:wrap;
+    border:2px solid var(--ink); background:var(--paper-2);
+  }
+  .claim .big{
+    display:flex; align-items:center; gap:16px; padding:clamp(16px,2.4vw,26px) clamp(18px,3vw,34px);
+    border-right:2px solid var(--ink); flex:1 1 340px;
+  }
+  .claim .num{font-family:var(--black); font-size:clamp(46px,8vw,86px); line-height:.8; color:var(--pink);}
+  .claim .txt b{display:block; font-weight:700; font-size:clamp(14px,1.9vw,19px); line-height:1.6;}
+  .claim .txt span{font-size:12px; color:var(--ink-2);}
+  .claim .side{display:flex; flex-wrap:wrap; flex:1 1 300px;}
+  .claim .side div{flex:1 1 140px; padding:14px clamp(14px,2vw,22px); border-right:1.5px dotted var(--line);}
+  .claim .side div:last-child{border-right:0;}
+  .claim .side dt{font-family:var(--sans); font-weight:700; font-size:8px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--ink-3); margin-bottom:4px;}
+  .claim .side dd{font-size:12.5px; line-height:1.75;}
+
+  .top .d1{right:2%; top:12%; width:clamp(80px,10vw,150px);}
+  .top .d2{right:16%; bottom:6%; width:clamp(60px,7vw,104px);}
+
+  /* ---------- 2. WORKS ---------- */
+  .sec{padding:clamp(54px,7vw,96px) 0; position:relative;}
+  .sec-top{display:flex; align-items:flex-end; gap:16px; flex-wrap:wrap; margin-bottom:clamp(22px,3vw,36px);
+    border-bottom:2px solid var(--ink); padding-bottom:14px;}
+  .sec-top h2{font-family:var(--black); font-size:clamp(26px,4.6vw,54px); line-height:.9; letter-spacing:-.04em;}
+  .sec-top .note{font-size:12px; color:var(--ink-2); margin-left:auto;}
+
+  .sorter{display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin-bottom:clamp(24px,3.4vw,40px);}
+  .sorter .cap{font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--ink-3);}
+  .sorter button{
+    font-family:var(--jp); font-weight:500; font-size:12px; letter-spacing:.04em;
+    border:1.5px solid var(--ink); border-radius:999px; background:var(--paper-2);
+    padding:6px 15px; cursor:pointer;
+  }
+  .sorter button.on{background:var(--ink); color:var(--paper);}
+
+  /* 代表作 */
+  .feature{display:flex; flex-direction:column; gap:clamp(26px,4vw,52px); margin-bottom:clamp(40px,6vw,80px);}
+  .fcard{
+    display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+    gap:clamp(18px,3vw,42px); align-items:start;
+    background:none; border:0; padding:0; text-align:left; cursor:pointer; width:100%;
+  }
+  .fcard .shot{
+    position:relative; background:var(--paper-2); border:2px solid var(--ink);
+    aspect-ratio:4/3; overflow:hidden;
+    transition:transform .2s cubic-bezier(.2,.9,.3,1);
+  }
+  .fcard:hover .shot{transform:translate(-3px,-3px); box-shadow:7px 7px 0 var(--ink);}
+  .fcard .shot img{width:100%; height:100%; object-fit:cover;}
+  .fcard .shot .no{
+    position:absolute; left:0; top:0; font-family:var(--black); font-size:13px;
+    background:var(--ink); color:var(--paper); padding:5px 12px;
+  }
+  .fcard .body{padding-top:2px;}
+  .fcard .tags{display:flex; gap:7px; flex-wrap:wrap; margin-bottom:12px;}
+  .fcard h3{font-weight:700; font-size:clamp(18px,2.5vw,27px); line-height:1.45; letter-spacing:.03em; margin-bottom:14px;}
+  .fcard dl{border-top:1.5px solid var(--ink);}
+  .fcard dl > div{display:grid; grid-template-columns:74px 1fr; gap:12px;
+    padding:10px 0; border-bottom:1.5px dotted var(--line);}
+  .fcard dt{font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-3); padding-top:5px;}
+  .fcard dd{font-size:13px; line-height:1.85; color:#2f2c27;}
+  .fcard .spec{display:flex; gap:18px; flex-wrap:wrap; margin-top:12px;
+    font-family:var(--sans); font-weight:500; font-size:10px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-3);}
+  .fcard .more{display:inline-block; margin-top:14px; font-family:var(--sans); font-weight:700;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+    border-bottom:2px solid var(--pink); padding-bottom:3px;}
+
+  /* その他 */
+  .otherhead{display:flex; align-items:baseline; gap:12px; border-top:2px solid var(--ink); padding-top:18px; margin-bottom:22px;}
+  .otherhead h3{font-family:var(--black); font-size:clamp(15px,2vw,21px); letter-spacing:-.01em;}
+  .otherhead span{font-size:11.5px; color:var(--ink-2);}
+  .grid{display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(16px,2.4vw,30px);}
+  .gcard{background:none; border:0; padding:0; text-align:left; cursor:pointer; display:block;}
+  .gcard .shot{aspect-ratio:4/3; overflow:hidden; border:1.5px solid var(--ink); background:var(--paper-2);
+    transition:transform .18s ease;}
+  .gcard:hover .shot{transform:translateY(-4px);}
+  .gcard .shot img{width:100%; height:100%; object-fit:cover;}
+  .gcard .t{display:flex; gap:7px; flex-wrap:wrap; margin:11px 0 7px;}
+  .gcard h4{font-weight:700; font-size:14px; line-height:1.5; letter-spacing:.03em; margin-bottom:5px;}
+  .gcard p{font-size:12px; line-height:1.75; color:var(--ink-2); margin-bottom:7px;}
+  .gcard .spec{font-family:var(--sans); font-weight:500; font-size:9px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--ink-3);}
+
+  /* ---------- 3. ABOUT ---------- */
+  .about{background:var(--paper-2); border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);}
+  .about .in{display:grid; grid-template-columns:1.35fr .65fr; gap:clamp(28px,5vw,72px); align-items:start;
+    padding:clamp(46px,6.5vw,92px) 0;}
+  .about .lead{font-weight:700; font-size:clamp(20px,3.2vw,38px); line-height:1.7; letter-spacing:.03em; margin-bottom:30px;}
+  .about .body p{font-size:13.5px; line-height:2.1; margin-bottom:18px; color:#33302a; max-width:52ch;}
+  .about .body p:last-child{margin-bottom:0;}
+  .about .side div{padding:12px 0; border-bottom:1.5px dotted var(--line);}
+  .about .side div:first-child{border-top:2px solid var(--ink);}
+  .about .side dt{font-family:var(--sans); font-weight:700; font-size:8px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--ink-3); margin-bottom:4px;}
+  .about .side dd{font-size:12.5px; line-height:1.8;}
+  .about .side .hl dd{color:var(--pink); font-weight:500;}
+
+  /* ---------- 4. SKILLS ---------- */
+  .skills{display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,5vw,72px);}
+  .skills h3{font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.24em;
+    text-transform:uppercase; color:var(--ink-3); margin-bottom:20px; padding-bottom:10px; border-bottom:1.5px solid var(--ink);}
+  .sk{display:flex; align-items:center; gap:14px; margin-bottom:13px;}
+  .sk .nm{font-size:13px; min-width:132px;}
+  .sk .bar{flex:1; height:11px; border:1.5px solid var(--ink); border-radius:999px; padding:2px;}
+  .sk .bar i{display:block; height:100%; width:0; border-radius:999px; background:var(--blue);
+    transition:width .8s cubic-bezier(.2,.9,.3,1);}
+  .sk:nth-child(3) .bar i{background:var(--pink);}
+  .sk:nth-child(4) .bar i{background:var(--yellow);}
+  .sk:nth-child(5) .bar i{background:var(--green);}
+  .sk:nth-child(6) .bar i{background:var(--orange);}
+  .tl{list-style:none;}
+  .tl li{display:flex; gap:16px; padding:9px 0; border-bottom:1.5px dotted var(--line); font-size:13px;}
+  .tl li:last-child{border-bottom:0;}
+  .tl li b{font-family:var(--sans); font-weight:700; font-size:9.5px; letter-spacing:.08em;
+    min-width:62px; color:var(--ink-3); padding-top:4px;}
+
+  /* ---------- 5. CONTACT ---------- */
+  .contact{border-top:2px solid var(--ink); background:var(--paper-2);}
+  .contact .in{padding:clamp(46px,6.5vw,92px) 0; display:grid; grid-template-columns:1fr auto;
+    gap:clamp(24px,4vw,54px); align-items:center;}
+  .contact h2{font-family:var(--black); font-size:clamp(30px,5.4vw,68px); line-height:.9; letter-spacing:-.04em; margin-bottom:14px;}
+  .contact p{font-size:13px; line-height:2; color:var(--ink-2); max-width:42ch;}
+  .links{display:flex; flex-direction:column; gap:10px;}
+  .links a{font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.16em;
+    text-transform:uppercase; border:2px solid var(--ink); border-radius:999px; padding:11px 26px; text-align:center;}
+  .links a:nth-child(1){background:var(--yellow);}
+  .links a:hover{transform:translateY(-2px);}
+
+  footer{display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    padding:18px clamp(16px,4vw,48px) 34px;
+    font-family:var(--sans); font-weight:500; font-size:9px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-3);}
+
+  /* ---------- viewer ---------- */
+  .viewer{position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:clamp(12px,3vw,44px);}
+  .viewer.open{display:flex;}
+  .viewer .tint{position:absolute; inset:0; background:rgba(243,241,234,.95);}
+  .viewer .sheet{position:relative; z-index:2; max-width:1060px; width:100%; max-height:90vh; overflow:auto;
+    background:var(--paper-2); border:2px solid var(--ink);}
+  .viewer .bar{position:sticky; top:0; z-index:4; display:flex; align-items:center; gap:10px;
+    padding:11px clamp(16px,3vw,26px); background:var(--paper-2); border-bottom:2px solid var(--ink);}
+  .viewer .bar .x{margin-left:auto; background:var(--yellow); border:1.5px solid var(--ink); border-radius:999px;
+    cursor:pointer; font-family:var(--sans); font-weight:700; font-size:9.5px; letter-spacing:.14em;
+    text-transform:uppercase; padding:5px 15px;}
+  .viewer .inner{padding:clamp(20px,3.2vw,38px);}
+  .viewer h3{font-weight:700; font-size:clamp(19px,2.8vw,28px); letter-spacing:.03em; margin-bottom:12px;}
+  .viewer dl{border-top:1.5px solid var(--ink); margin-bottom:22px;}
+  .viewer dl > div{display:grid; grid-template-columns:80px 1fr; gap:14px; padding:10px 0; border-bottom:1.5px dotted var(--line);}
+  .viewer dt{font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--ink-3); padding-top:5px;}
+  .viewer dd{font-size:13.5px; line-height:1.95; color:#2f2c27;}
+  .viewer .shots{display:flex; gap:16px; flex-wrap:wrap; justify-content:center;
+    padding:22px 0; border-top:1.5px dotted var(--line);}
+  .viewer .shots img{max-height:56vh; width:auto; border:1.5px solid var(--ink);}
+  .viewer .live{display:inline-block; margin-top:16px; font-family:var(--sans); font-weight:700; font-size:10px;
+    letter-spacing:.16em; text-transform:uppercase; background:var(--green); color:#fff;
+    border:1.5px solid var(--ink); border-radius:999px; padding:8px 20px;}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.9,.3,1);}
+  .reveal.in{opacity:1; transform:none;}
+
+  @media (max-width:1100px){ .grid{grid-template-columns:repeat(3,1fr);} }
+  @media (max-width:860px){
+    .fcard{grid-template-columns:1fr; gap:18px;}
+    .about .in{grid-template-columns:1fr; gap:30px;}
+    .skills{grid-template-columns:1fr; gap:34px;}
+    .contact .in{grid-template-columns:1fr;}
+    .links{flex-direction:row; flex-wrap:wrap;}
+    .grid{grid-template-columns:repeat(2,1fr);}
+    header .sub{display:none;}
+    .doodle{display:none;}
+  }
+  @media (max-width:520px){
+    .grid{grid-template-columns:1fr;}
+    .claim .big{border-right:0; border-bottom:2px solid var(--ink);}
+    .fcard dl > div{grid-template-columns:64px 1fr; gap:9px;}
+  }
+  @media (prefers-reduced-motion:reduce){ *{animation:none !important;} html{scroll-behavior:auto;} }
+</style>
+
+<style>
+  .top{position:relative; padding:clamp(78px,11vh,118px) 0 0; overflow:hidden;}
+  .hero{
+    display:grid; grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+    gap:clamp(22px,4vw,64px); align-items:center;
+    min-height:calc(88svh - 120px); padding-bottom:clamp(26px,5vh,54px);
+  }
+  .hcol{position:relative; z-index:3;}
+  .eyebrow{font-family:var(--sans); font-weight:600; font-size:10px; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-3); margin-bottom:clamp(14px,2.4vh,26px);}
+  .hero h1{margin-bottom:clamp(16px,2.6vh,28px);}
+  .hero h1 .en{display:block; font-family:var(--black); font-size:clamp(38px,7.4vw,96px);
+    line-height:.88; letter-spacing:-.042em;}
+  .hero h1 .jp{display:block; font-weight:700; font-size:clamp(16px,2.4vw,26px);
+    letter-spacing:.34em; margin-top:14px;}
+  .hero .pos{font-size:clamp(13px,1.7vw,16px); line-height:2; margin-bottom:clamp(20px,3.4vh,34px);}
+  .hero .pos b{font-weight:700; background:linear-gradient(transparent 62%, var(--yellow) 62%);}
+
+  .five{display:flex; align-items:center; gap:16px; border:2px solid var(--ink);
+    background:var(--paper-2); padding:14px 20px 16px; max-width:520px;}
+  .five .n{font-family:var(--black); font-size:clamp(44px,7vw,74px); line-height:.78; color:var(--pink);}
+  .five .t b{display:block; font-weight:700; font-size:clamp(12.5px,1.55vw,15px); line-height:1.65;}
+  .five .t span{font-size:11.5px; color:var(--ink-2);}
+
+  .cue{display:inline-flex; align-items:center; gap:10px; margin-top:clamp(20px,3.4vh,34px);
+    font-family:var(--sans); font-weight:700; font-size:10.5px; letter-spacing:.18em;
+    text-transform:uppercase; border-bottom:2px solid var(--ink); padding-bottom:5px;}
+  .cue span{display:inline-block; animation:bob 1.8s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);} 50%{transform:translateY(5px);}}
+
+  /* 貼り付けた3枚 */
+  .photos{position:relative; height:clamp(330px,54vh,580px); z-index:2;}
+  .pcard{
+    position:absolute; border:2px solid var(--ink); background:var(--paper-2);
+    box-shadow:7px 7px 0 var(--ink); overflow:visible; cursor:pointer; padding:0;
+    transition:transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s ease;
+  }
+  .pcard .im{overflow:hidden; aspect-ratio:4/3;}
+  .pcard img{width:100%; height:100%; object-fit:cover; display:block;}
+  .pcard .st{
+    position:absolute; left:-10px; top:-12px; font-family:var(--sans); font-weight:700;
+    font-size:9.5px; letter-spacing:.12em; background:var(--yellow); border:2px solid var(--ink);
+    border-radius:999px; padding:4px 11px; transform:rotate(-6deg); white-space:nowrap;
+  }
+  .pcard .cp{
+    position:absolute; left:0; right:0; bottom:-27px;
+    font-family:var(--sans); font-weight:600; font-size:9.5px; letter-spacing:.1em;
+    color:var(--ink-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .pcard:hover{transform:rotate(0deg) translateY(-6px) !important; box-shadow:12px 12px 0 var(--pink); z-index:9;}
+  .p1{left:0;    top:2%;    width:57%; transform:rotate(-3deg);   z-index:3;}
+  .p2{right:0;   top:20%;   width:52%; transform:rotate(2.6deg);  z-index:4;}
+  .p3{left:9%;   bottom:4%; width:56%; transform:rotate(-1.4deg); z-index:5;}
+
+  .top .d1{right:3%; top:6%; width:clamp(70px,8vw,120px);}
+  .top .d2{left:41%; bottom:14%; width:clamp(54px,6vw,92px); z-index:1;}
+  .top .d3{left:-2%; top:52%; width:clamp(180px,26vw,400px); z-index:1;}
+
+  /* 下の情報帯 */
+  .band{border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); background:var(--paper-2);}
+  .bandin{display:grid; grid-template-columns:repeat(4,1fr); gap:0;}
+  .bandin > div{padding:14px 18px 15px; border-right:1.5px dotted var(--line);}
+  .bandin > div:first-child{padding-left:0;}
+  .bandin > div:last-child{border-right:0;}
+  .bandin dt{font-family:var(--sans); font-weight:700; font-size:8px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--ink-3); margin-bottom:4px;}
+  .bandin dd{font-size:11.5px; line-height:1.75;}
+  .bandin .hl dd{color:var(--pink); font-weight:500;}
+
+  @media (max-width:1000px){
+    .hero{grid-template-columns:1fr; min-height:0; gap:34px;}
+    .photos{height:clamp(300px,46vw,430px); order:2;}
+    .bandin{grid-template-columns:1fr 1fr;}
+    .bandin > div{border-bottom:1.5px dotted var(--line); padding-left:18px;}
+    .bandin > div:first-child{padding-left:18px;}
+    .top .d3{display:none;}
+  }
+  @media (max-width:560px){
+    .bandin{grid-template-columns:1fr;}
+    .photos{height:auto; display:flex; gap:14px; overflow-x:auto; padding:16px 0 34px;}
+    .pcard{position:static; width:72%; flex:0 0 72%; transform:none !important;}
+    .p1,.p2,.p3{transform:none;}
+  }
+</style>
+
+<style>
+  /* トップは文字を落とす */
+  .eyebrow{display:none;}
+  .hero h1{margin-bottom:clamp(18px,3vh,32px);}
+  .hero .pos{font-size:clamp(14px,2vw,21px); font-weight:700; line-height:1.7;
+    margin-bottom:clamp(22px,3.6vh,38px); letter-spacing:.06em;}
+  .five{gap:14px; padding:12px 18px 13px; max-width:300px; align-items:center;}
+  .five .t{font-size:clamp(11.5px,1.4vw,13.5px); line-height:1.65; font-weight:500;}
+  .bandin{grid-template-columns:repeat(3,1fr);}
+  .bandin > div{padding:11px 18px 12px;}
+  .bandin dd{font-size:11px; letter-spacing:.04em;}
+  @media (max-width:1000px){ .bandin{grid-template-columns:1fr;} }
+</style>
+
+<style>
+  /* 見える文字を減らし、余白と画像に預ける */
+  .fcard{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr); align-items:center;}
+  .fcard .shot{aspect-ratio:16/11;}
+  .fcard h3{font-size:clamp(17px,2.2vw,25px); margin-bottom:10px; line-height:1.5;}
+  .fcard .one{font-size:13px; line-height:1.95; color:var(--ink-2); margin-bottom:16px; max-width:32ch;}
+  .fcard .spec{display:flex; gap:14px; flex-wrap:wrap; font-size:9.5px; letter-spacing:.1em;}
+  .fcard .more{margin-top:16px;}
+  .gcard h4{font-size:13.5px; margin-bottom:6px;}
+  .gcard .spec{font-size:9px;}
+  .five .t{font-family:var(--sans); font-weight:700; font-size:11px; letter-spacing:.16em; text-transform:uppercase;}
+  .five{max-width:230px;}
+  .bandin{grid-template-columns:repeat(2,1fr);}
+  .sec-top{padding-bottom:12px;}
+  .otherhead h3{font-size:clamp(13px,1.6vw,17px);}
+  @media (max-width:860px){ .fcard{grid-template-columns:1fr;} }
+  @media (max-width:1000px){ .bandin{grid-template-columns:1fr;} }
+</style>
+
+<style>
+  /* ---------- 出現 ---------- */
+  .wipe{clip-path:inset(0 100% 0 0); transition:clip-path 1s cubic-bezier(.16,.84,.28,1);}
+  .wipe.in{clip-path:inset(0 0 0 0);}
+  .rise{opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .8s cubic-bezier(.16,.84,.28,1);}
+  .rise.in{opacity:1; transform:none;}
+
+  .sec-top h2{overflow:hidden;}
+  .sec-top h2 span{display:inline-block; transform:translateY(105%) skewY(6deg);
+    transition:transform .85s cubic-bezier(.16,.84,.28,1);}
+  .sec-top h2.in span{transform:none;}
+
+  /* ---------- トップの3枚 ---------- */
+  .pcard{opacity:0;}
+  .pcard.in{opacity:1;}
+  .p1.in{animation:drop1 .9s cubic-bezier(.16,.9,.3,1) both;}
+  .p2.in{animation:drop2 .9s cubic-bezier(.16,.9,.3,1) .12s both;}
+  .p3.in{animation:drop3 .9s cubic-bezier(.16,.9,.3,1) .24s both;}
+  @keyframes drop1{from{opacity:0; transform:translate(-40px,34px) rotate(-14deg) scale(.9);}
+                   to{opacity:1; transform:rotate(-3deg);}}
+  @keyframes drop2{from{opacity:0; transform:translate(46px,40px) rotate(13deg) scale(.9);}
+                   to{opacity:1; transform:rotate(2.6deg);}}
+  @keyframes drop3{from{opacity:0; transform:translate(-12px,56px) rotate(-10deg) scale(.9);}
+                   to{opacity:1; transform:rotate(-1.4deg);}}
+
+  /* ---------- 代表作：2枚目に入れ替わる ---------- */
+  .fcard .shot{position:relative;}
+  .fcard .shot img.alt{position:absolute; inset:0; opacity:0; transition:opacity .45s ease;}
+  .fcard:hover .shot img.alt{opacity:1;}
+  .fcard .shot img.base{transition:transform .8s cubic-bezier(.16,.84,.28,1);}
+  .fcard:hover .shot img.base{transform:scale(1.04);}
+
+  /* ---------- OTHER：縦スクロールで横に流れる ---------- */
+  .strip{position:relative;}
+  .stripPin{position:sticky; top:0; height:100svh; display:flex; align-items:center; overflow:hidden;}
+  .track{display:flex; gap:clamp(16px,2.4vw,32px); padding:0 clamp(16px,4vw,48px); will-change:transform;}
+  .track .gcard{flex:0 0 clamp(230px,25vw,330px);}
+  .track .gcard .shot{aspect-ratio:4/3;}
+  .stripHint{
+    position:absolute; right:clamp(16px,4vw,48px); bottom:34px; z-index:3;
+    font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--ink-3);
+  }
+
+  /* ---------- 採用の帯 ---------- */
+  .marquee{border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);
+    background:var(--yellow); overflow:hidden; padding:9px 0;}
+  .mrow{display:flex; white-space:nowrap; animation:mv 26s linear infinite;
+    font-family:var(--black); font-size:clamp(13px,1.8vw,20px); letter-spacing:.02em;}
+  .mrow span{padding-right:26px;}
+  @keyframes mv{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+  @media (max-width:860px){
+    .stripPin{position:static; height:auto; overflow:visible;}
+    .track{flex-wrap:wrap; transform:none !important; padding:0;}
+    .track .gcard{flex:0 0 calc(50% - 10px);}
+    .stripHint{display:none;}
+  }
+  @media (max-width:520px){ .track .gcard{flex:0 0 100%;} }
+  @media (prefers-reduced-motion:reduce){
+    .wipe,.rise,.sec-top h2 span,.pcard{clip-path:none !important; opacity:1 !important; transform:none !important; animation:none !important;}
+    .mrow{animation:none;}
+    .stripPin{position:static; height:auto;}
+    .track{flex-wrap:wrap; transform:none !important;}
+  }
+</style>
+
+<style>
+  /* ---------- 下地 ---------- */
+  body{position:relative;}
+  .bg{position:fixed; inset:0; z-index:-2; pointer-events:none;}
+  /* 本人の下書きと同じ、点の方眼 */
+  .bg .dots{
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(18,17,16,.16) 1.1px, transparent 1.2px);
+    background-size:22px 22px;
+  }
+  /* 紙の粒 */
+  .bg .grain{
+    position:absolute; inset:0; opacity:.5; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.22'/></svg>");
+  }
+  /* 淡い色だまり */
+  .bg b{position:absolute; display:block; border-radius:50%; filter:blur(70px);}
+  .bg .b1{width:46vw; height:46vw; background:rgba(242,201,76,.30); left:-12vw; top:-10vw;}
+  .bg .b2{width:40vw; height:40vw; background:rgba(236,95,143,.20); right:-10vw; top:22vh;}
+  .bg .b3{width:44vw; height:44vw; background:rgba(63,127,224,.16); left:14vw; top:132vh;}
+  .bg .b4{width:38vw; height:38vw; background:rgba(98,181,106,.16); right:-8vw; top:210vh;}
+
+  /* セクションは半透明の紙を重ねて、下地を透かす */
+  .about{background:rgba(251,250,246,.86); backdrop-filter:blur(2px);}
+  .contact{background:rgba(251,250,246,.86); backdrop-filter:blur(2px);}
+  .band{background:rgba(251,250,246,.9);}
+  header{background:rgba(243,241,234,.92);}
+  .fcard .shot, .gcard .shot, .pcard{background:var(--paper-2);}
+
+  /* ---------- 余白に散らした落書き ---------- */
+  .bgdoodle{position:absolute; pointer-events:none; z-index:0; overflow:visible; opacity:.85;}
+  .bd-a{left:-3%;  top:12%;  width:clamp(90px,11vw,170px);}
+  .bd-b{right:1%;  bottom:8%; width:clamp(70px,8vw,125px);}
+  .bd-c{left:2%;   bottom:10%; width:clamp(110px,14vw,215px);}
+  .bd-d{right:3%;  top:14%;  width:clamp(80px,10vw,150px);}
+  .sec,.about,.contact{position:relative;}
+  .about .in,.contact .in,.sec .wrap{position:relative; z-index:2;}
+</style>
+
+<style>
+  .top{position:relative; min-height:100svh; overflow:hidden; padding:0;}
+  #stage{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:2;}
+  #caps{position:absolute; inset:0; z-index:3; pointer-events:none;}
+  .cap3{
+    position:absolute; transform:translate(0,8px); white-space:nowrap;
+    transition:opacity .25s ease;
+  }
+  .cap3 b{display:block; font-weight:700; font-size:12.5px; letter-spacing:.04em; line-height:1.4;}
+  .cap3 i{display:block; font-style:normal; font-family:var(--sans); font-weight:700;
+    font-size:8.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-top:2px;}
+  .cap3.hot b{color:var(--pink);}
+
+  .topin{position:absolute; left:clamp(18px,5vw,74px); top:clamp(92px,15vh,150px); z-index:4; pointer-events:none;}
+  .bigname{font-family:var(--black); font-size:clamp(44px,10.5vw,142px); line-height:.86; letter-spacing:-.045em;}
+  .bigname .hl{background:linear-gradient(transparent 58%, rgba(242,201,76,.85) 58%); padding:0 .04em;}
+  .chip-y{
+    display:inline-block; margin-top:clamp(16px,2.6vh,28px);
+    font-family:var(--jp); font-weight:500; font-size:clamp(10px,1.3vw,13px); letter-spacing:.06em;
+    background:var(--yellow); border:2px solid var(--ink); border-radius:999px;
+    padding:6px 16px; transform:rotate(-1.4deg);
+  }
+
+  .rail{position:absolute; top:0; bottom:0; z-index:4; display:flex; align-items:center; pointer-events:none;}
+  .rail.l{left:clamp(6px,1.4vw,18px);}
+  .rail.r{right:clamp(6px,1.4vw,18px);}
+  .rail span{writing-mode:vertical-rl; font-family:var(--sans); font-weight:600;
+    font-size:8.5px; letter-spacing:.28em; text-transform:uppercase; color:var(--ink-3);}
+  .rail.l span{transform:rotate(180deg);}
+
+  .topfoot{
+    position:absolute; left:0; right:0; bottom:0; z-index:5;
+    display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
+    padding:0 clamp(18px,4vw,48px) clamp(18px,3vh,30px);
+  }
+  .topfoot .hint{
+    font-family:var(--jp); font-weight:500; font-size:11.5px;
+    background:var(--pink); color:#fff; border:2px solid var(--ink); border-radius:999px; padding:5px 15px;
+  }
+  .topfoot .loc{font-family:var(--sans); font-weight:600; font-size:9px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--ink-3);}
+
+  .dd-cloud{left:30%; top:6%;  width:clamp(90px,13vw,210px); z-index:1;}
+  .dd-sun{right:6%;  top:9%;  width:clamp(62px,7vw,120px); z-index:1;}
+  .dd-wave{left:18%; bottom:16%; width:clamp(130px,18vw,250px); z-index:1;}
+  .dd-star{left:4%;  bottom:26%; width:clamp(58px,6vw,100px); z-index:1;}
+
+  @media (max-width:860px){
+    .rail{display:none;}
+    .topin{top:86px;}
+    .top{min-height:86svh;}
+  }
+</style>
+
+<style>
+  .bg b{display:none;}
+  #sky{position:absolute; inset:0; width:100%; height:100%; display:block;}
+  .bg .dots{opacity:.75;}
+  body{background:#f2efe6;}
+</style>
+
+<style>
+  /* 浮いている作品の名前は、見ている1枚にだけ */
+  .cap3{
+    position:absolute; transform:translate(0,10px); white-space:nowrap;
+    background:var(--paper-2); border:2px solid var(--ink); border-radius:4px;
+    padding:8px 14px 9px; box-shadow:4px 4px 0 var(--ink);
+    opacity:0; transition:opacity .18s ease; pointer-events:none;
+  }
+  .cap3.on{opacity:1;}
+  .cap3 b{display:block; font-weight:700; font-size:13px; letter-spacing:.04em; line-height:1.4;}
+  .cap3 i{display:block; font-style:normal; font-family:var(--sans); font-weight:700;
+    font-size:8.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-top:3px;}
+  .cap3 u{display:block; text-decoration:none; font-family:var(--sans); font-weight:700;
+    font-size:8.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--pink); margin-top:7px;}
+</style>
+
+<style>
+  /* ---------- 場の上に置かれた窓 ---------- */
+  .win{
+    position:absolute; z-index:6; width:clamp(210px,21vw,272px);
+    background:var(--paper-2); border:2px solid var(--ink);
+    box-shadow:6px 6px 0 var(--ink); user-select:none;
+  }
+  .win.closed{display:none;}
+  .win.drag{box-shadow:11px 11px 0 var(--pink); z-index:9;}
+  .wbar{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    background:var(--ink); color:var(--paper); padding:5px 6px 5px 11px; cursor:grab;
+    font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.16em; text-transform:uppercase;
+  }
+  .wbar:active{cursor:grabbing;}
+  .wx{background:none; border:0; color:var(--paper); cursor:pointer; font-size:11px; line-height:1; padding:3px 5px;}
+  .wx:hover{color:var(--pink);}
+  .wbody{padding:12px 14px 13px;}
+  .wbody p{font-size:11.5px; line-height:1.85; font-weight:300;}
+  .wbody p b{font-weight:700;}
+  .wbtn{display:flex; gap:7px; margin-top:11px;}
+  .wbtn a,.wbtn button{
+    font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+    border:1.5px solid var(--ink); border-radius:999px; padding:5px 13px; cursor:pointer; background:var(--paper-2);
+  }
+  .wbtn a{background:var(--yellow);}
+  .wbtn a:hover{background:var(--pink); color:#fff;}
+  .wbtn button:hover{background:var(--ink); color:var(--paper);}
+
+  .w1{left:clamp(16px,4vw,52px); bottom:clamp(96px,17vh,168px); transform:rotate(-1.2deg);}
+  .w2{right:clamp(16px,4vw,52px); top:clamp(96px,15vh,150px); transform:rotate(1.4deg);}
+  .w3{right:clamp(100px,17vw,290px); bottom:clamp(90px,15vh,150px); transform:rotate(-.8deg);}
+
+  /* ---------- アイコンのナビ ---------- */
+  .icons{
+    position:absolute; z-index:7; left:50%; bottom:clamp(14px,2.4vh,26px);
+    transform:translateX(-50%); display:flex; gap:clamp(10px,1.8vw,22px);
+  }
+  .ic{display:flex; flex-direction:column; align-items:center; gap:4px;
+    background:var(--paper-2); border:2px solid var(--ink); border-radius:14px;
+    padding:8px 12px 7px; box-shadow:3px 3px 0 var(--ink);
+    transition:transform .16s ease, box-shadow .16s ease;}
+  .ic:hover{transform:translate(-2px,-3px); box-shadow:6px 7px 0 var(--pink);}
+  .ic svg{width:clamp(20px,2.4vw,28px); height:auto;}
+  .ic span{font-family:var(--sans); font-weight:700; font-size:8px; letter-spacing:.14em; text-transform:uppercase;}
+
+  .reopen{
+    position:absolute; z-index:7; left:clamp(16px,4vw,52px); bottom:clamp(16px,2.6vh,30px);
+    font-family:var(--sans); font-weight:700; font-size:9px; letter-spacing:.14em; text-transform:uppercase;
+    background:var(--paper-2); border:2px solid var(--ink); border-radius:999px;
+    padding:7px 15px; cursor:pointer; box-shadow:3px 3px 0 var(--ink);
+  }
+  .reopen:hover{background:var(--yellow);}
+
+  .topfoot{justify-content:flex-end;}
+
+  @media (max-width:860px){
+    .win{position:static; width:auto; margin:0 clamp(14px,4vw,24px) 12px; transform:none !important; box-shadow:4px 4px 0 var(--ink);}
+    .w3{display:none;}
+    .icons{position:static; transform:none; justify-content:center; flex-wrap:wrap; margin:16px 0 8px;}
+    .top{min-height:auto; padding-bottom:20px;}
+    #stage{position:relative; height:62svh;}
+    .topfoot{position:static; padding:6px clamp(14px,4vw,24px) 10px;}
+    .reopen{position:static; margin:0 auto 14px; display:block;}
+  }
+</style>
+
+<style>
+  /* ---------- ノートの紙 ---------- */
+  body{background:#fbf8ef;}
+  #sky{display:none;}
+  .bg .dots{display:none;}
+
+  .bg .rule{
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(180deg,
+        transparent 0 30px,
+        rgba(96,140,190,.26) 30px 31px);
+    background-position:0 -1px;
+  }
+  .bg .margin{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(90deg, transparent calc(clamp(46px,7vw,104px) - 1px),
+        rgba(224,116,132,.45) calc(clamp(46px,7vw,104px) - 1px),
+        rgba(224,116,132,.45) clamp(46px,7vw,104px), transparent clamp(46px,7vw,104px)),
+      linear-gradient(90deg, transparent calc(100% - clamp(46px,7vw,104px)),
+        rgba(224,116,132,.22) calc(100% - clamp(46px,7vw,104px)),
+        rgba(224,116,132,.22) calc(100% - clamp(46px,7vw,104px) + 1px), transparent calc(100% - clamp(46px,7vw,104px) + 1px));
+  }
+  .bg .grain{opacity:.42;}
+
+  /* ---------- カーソルに寄ってくる光 ---------- */
+  .glow{
+    position:fixed; left:0; top:0; z-index:-1; pointer-events:none;
+    width:clamp(420px,46vw,760px); aspect-ratio:1/1;
+    margin-left:-50%; margin-top:-50%;
+    background:radial-gradient(circle,
+      rgba(255,251,226,.95) 0%,
+      rgba(255,246,206,.55) 28%,
+      rgba(255,240,196,.22) 52%,
+      rgba(255,240,196,0) 72%);
+    filter:blur(22px);
+    opacity:0; transition:opacity .9s ease;
+    will-change:transform;
+  }
+  .glow.on{opacity:1;}
+  @media (hover:none){ .glow{display:none;} }
+  @media (prefers-reduced-motion:reduce){ .glow{display:none;} }
+
+  /* 紙の上に乗るものは、光より前に */
+  main, header, footer, .top, .viewer, .progress{position:relative; z-index:1;}
+</style>
+
+<style>
+  /* ================= デザイナーのノート =================
+     横罫は語学のノート。ドット方眼（ロディア）＋
+     立体を描き起こすための等角グリッドに差し替え。 */
+  body{background:#fbfaf6;}
+  .bg .rule, .bg .margin{display:none;}
+
+  /* 5mm相当のドット方眼 */
+  .bg .dotgrid{
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(112,108,146,.42) 1.25px, transparent 1.35px);
+    background-size:24px 24px;
+  }
+
+  /* 等角グリッド（30°）— 立体を起こすための下書き線。うっすらと */
+  .bg .iso{
+    position:absolute; inset:0; opacity:.5;
+    background-image:
+      repeating-linear-gradient( 30deg, rgba(112,108,146,.15) 0 1px, transparent 1px 41.6px),
+      repeating-linear-gradient(150deg, rgba(112,108,146,.15) 0 1px, transparent 1px 41.6px),
+      repeating-linear-gradient( 90deg, rgba(112,108,146,.12) 0 1px, transparent 1px 72px);
+    -webkit-mask-image:radial-gradient(ellipse 62% 52% at 68% 34%, #000 20%, transparent 78%);
+            mask-image:radial-gradient(ellipse 62% 52% at 68% 34%, #000 20%, transparent 78%);
+  }
+
+  /* 綴じ側のミシン目 */
+  .bg .perf{
+    position:absolute; left:clamp(26px,4.2vw,62px); top:0; bottom:0; width:6px;
+    background-image:radial-gradient(rgba(150,145,132,.75) 1.5px, transparent 1.6px);
+    background-size:6px 13px;
+  }
+
+  .bg .grain{opacity:.38;}
+
+  /* 光は紙の色に寄せる */
+  .glow{
+    background:radial-gradient(circle,
+      rgba(255,252,232,.92) 0%,
+      rgba(255,248,214,.5) 30%,
+      rgba(252,244,214,.2) 55%,
+      rgba(252,244,214,0) 74%);
+  }
+</style>
+
+<style>
+  .ic .sk{stroke-width:2.6; opacity:.78;}
+  /* ---------- アイデアスケッチの線 ---------- */
+  .sk{fill:none; stroke:#3d3b46; stroke-width:2.1; stroke-linecap:round; stroke-linejoin:round;
+      filter:url(#wob); opacity:.62;}
+  .sk.thin{stroke-width:1.5; opacity:.45;}
+  .sk.dash{stroke-dasharray:7 6; opacity:.4;}
+  .sk.hot{stroke:#e2512c; stroke-width:2.2; opacity:.72;}
+
+  .dd-net{left:26%;  top:7%;    width:clamp(120px,16vw,250px);}
+  .dd-iso{right:5%;  top:10%;   width:clamp(78px,9vw,160px);}
+  .dd-thumb{left:15%; bottom:13%; width:clamp(130px,18vw,260px);}
+  .dd-dim{right:14%;  bottom:22%; width:clamp(110px,14vw,220px);}
+
+  .bd-a{left:-2%; top:10%;  width:clamp(90px,11vw,180px);}
+  .bd-b{right:1%; bottom:8%; width:clamp(100px,12vw,200px);}
+  .bd-c{left:5%;  top:14%;  width:clamp(110px,14vw,225px);}
+  .bd-d{right:3%; top:12%;  width:clamp(90px,11vw,175px);}
+
+  /* クレヨンのゆらぎは、スケッチには強すぎるので弱める */
+  #wob feDisplacementMap{ }
+</style>
+
+<style>
+  /* ================= 紙のくたびれ ================= */
+  .bg .stain{
+    position:absolute; inset:0; pointer-events:none; mix-blend-mode:multiply; opacity:.34;
+    background-image:
+      radial-gradient(ellipse 28% 20% at 12% 18%, rgba(146,122,86,.16), transparent 70%),
+      radial-gradient(ellipse 22% 16% at 82% 42%, rgba(146,122,86,.13), transparent 72%),
+      radial-gradient(ellipse 34% 24% at 58% 88%, rgba(120,104,80,.12), transparent 74%),
+      radial-gradient(ellipse 18% 30% at 96% 78%, rgba(146,122,86,.14), transparent 70%);
+  }
+  /* 擦れ・ざらつき（粗いノイズ） */
+  .bg .grunge{
+    position:absolute; inset:0; pointer-events:none; mix-blend-mode:multiply; opacity:.2;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='g'><feTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='5' seed='9'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='gamma' exponent='2.4'/></feComponentTransfer></filter><rect width='100%25' height='100%25' filter='url(%23g)' opacity='0.55'/></svg>");
+    background-size:520px 520px;
+  }
+  /* 折り目 */
+  .bg .crease{
+    position:absolute; inset:0; pointer-events:none; opacity:.32;
+    background-image:
+      linear-gradient(90deg, transparent 49.6%, rgba(255,255,255,.7) 49.9%, rgba(120,110,92,.22) 50.1%, transparent 50.5%),
+      linear-gradient(180deg, transparent 33.3%, rgba(255,255,255,.55) 33.5%, rgba(120,110,92,.14) 33.7%, transparent 34%);
+  }
+  /* 四辺の陰り */
+  .bg .vig{
+    position:absolute; inset:0; pointer-events:none; mix-blend-mode:multiply; opacity:.55;
+    background:radial-gradient(ellipse 78% 70% at 50% 46%, transparent 52%, rgba(112,98,74,.24) 100%);
+  }
+  .bg .grain{opacity:.5;}
+
+  /* 紙に乗るものにも、わずかな紙目 */
+  /* 紙の質感は背景だけ。前面のパネルには重ねない */
+  /* ================= 付箋のタブ ================= */
+  .tabs{
+    position:fixed; right:0; top:50%; transform:translateY(-50%); z-index:125;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .tab{
+    position:relative; display:block; width:clamp(76px,8vw,104px); padding:11px 10px 13px;
+    border:1.5px solid rgba(60,52,36,.38); border-right:0;
+    box-shadow:-3px 4px 7px rgba(70,60,40,.2);
+    transform:translateX(20px) rotate(-1.2deg);
+    transition:transform .22s cubic-bezier(.2,.9,.3,1), box-shadow .22s ease;
+  }
+  .tab span{
+    display:block; font-family:var(--sans); font-weight:700; font-size:9.5px;
+    letter-spacing:.16em; text-align:center; color:#2f2a1f;
+  }
+  .tab::after{  /* めくれた角 */
+    content:''; position:absolute; right:0; bottom:0; width:15px; height:15px;
+    background:linear-gradient(135deg, rgba(0,0,0,.14), rgba(255,255,255,.5));
+    clip-path:polygon(100% 0, 100% 100%, 0 100%);
+  }
+  .tab:nth-child(even){transform:translateX(20px) rotate(1.4deg);}
+  .tab:hover{transform:translateX(0) rotate(0deg); box-shadow:-6px 7px 12px rgba(70,60,40,.26);}
+  .t1{background:#f6e07a;} .t2{background:#f7b6c8;} .t3{background:#a9d6f2;} .t4{background:#b7e2b0;}
+  @media (max-width:860px){
+    .tabs{top:auto; bottom:0; right:0; left:0; transform:none; flex-direction:row; justify-content:center;
+      gap:6px; padding:0 8px 6px;}
+    .tab{width:auto; flex:1 1 auto; padding:8px 6px 10px; border:1.5px solid rgba(60,52,36,.38); border-bottom:0;
+      transform:translateY(10px) rotate(0) !important; box-shadow:0 -3px 7px rgba(70,60,40,.18);}
+    .tab:hover{transform:translateY(0) !important;}
+    .tab::after{display:none;}
+  }
+
+  /* ================= 紙に書き込んだメモ ================= */
+  .memo{
+    position:absolute; z-index:4; pointer-events:none;
+    font-family:'Zen Kurenaido', var(--jp); font-size:clamp(11px,1.35vw,15px);
+    line-height:1.85; color:#3f4a63; opacity:.82;
+  }
+  .m1{left:clamp(18px,5vw,66px); top:clamp(230px,34vh,330px); transform:rotate(-2.2deg);}
+  .m2{left:34%; bottom:clamp(120px,20vh,210px); transform:rotate(1.4deg); color:#c0402a;}
+  .m3{right:clamp(60px,12vw,210px); top:clamp(150px,24vh,250px); transform:rotate(2deg);}
+  @media (max-width:860px){ .memo{display:none;} }
+</style>
+
+<style>
+  /* ================= 貼った付箋 ================= */
+  .posts{
+    position:absolute; z-index:7; left:clamp(16px,4vw,58px); bottom:clamp(22px,4vh,56px);
+    display:flex; gap:clamp(6px,1vw,14px); align-items:flex-end;
+  }
+  .post{
+    position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    width:clamp(74px,7.6vw,104px); aspect-ratio:1/1; padding:8px 6px;
+    box-shadow:1px 4px 7px rgba(70,58,34,.26), 0 1px 0 rgba(255,255,255,.5) inset;
+    transition:transform .2s cubic-bezier(.2,.9,.3,1), box-shadow .2s ease;
+    text-align:center;
+  }
+  .post b{
+    font-family:'Zen Kurenaido', var(--jp); font-weight:400;
+    font-size:clamp(13px,1.5vw,17px); letter-spacing:.04em; color:#37332a; line-height:1.35;
+  }
+  .post span{
+    font-family:'Zen Kurenaido', var(--jp); font-size:clamp(8px,.9vw,10px);
+    letter-spacing:.14em; text-transform:uppercase; color:rgba(55,51,42,.6); margin-top:4px;
+  }
+  /* のりしろ（上端だけ少し濃い） */
+  .post::before{
+    content:''; position:absolute; left:0; right:0; top:0; height:26%;
+    background:linear-gradient(180deg, rgba(0,0,0,.055), transparent);
+  }
+  /* めくれた右下 */
+  .post::after{
+    content:''; position:absolute; right:0; bottom:0; width:17px; height:17px;
+    background:linear-gradient(135deg, rgba(0,0,0,.16), rgba(255,255,255,.62));
+    clip-path:polygon(100% 0, 100% 100%, 0 100%);
+  }
+  .p1{background:#f7e07c; transform:rotate(-4deg);}
+  .p2{background:#f8b3c6; transform:rotate(2.6deg);  margin-bottom:14px;}
+  .p3{background:#a9d8f4; transform:rotate(-2deg);}
+  .p4{background:#b6e3ad; transform:rotate(3.4deg);  margin-bottom:9px;}
+  .post:hover{transform:rotate(0deg) translateY(-7px); box-shadow:2px 10px 16px rgba(70,58,34,.3);}
+
+  @media (max-width:860px){
+    .posts{position:static; justify-content:center; flex-wrap:wrap; padding:16px 14px 4px;}
+    .post{width:clamp(68px,20vw,92px);}
+    .p2,.p4{margin-bottom:0;}
+  }
+</style>
+
+<style>
+  /* ================= 窓を、貼った付箋に ================= */
+  .win{
+    width:clamp(196px,19vw,244px); border:0;
+    box-shadow:1px 5px 9px rgba(70,58,34,.28);
+    background:#f7e07c;
+  }
+  .win::after{   /* めくれた右下 */
+    content:''; position:absolute; right:0; bottom:0; width:20px; height:20px;
+    background:linear-gradient(135deg, rgba(0,0,0,.17), rgba(255,255,255,.6));
+    clip-path:polygon(100% 0, 100% 100%, 0 100%);
+  }
+  .win.drag{box-shadow:3px 14px 22px rgba(70,58,34,.34);}
+  .wbar{
+    background:transparent; color:rgba(55,50,40,.62); padding:9px 8px 2px 13px;
+    font-family:'Zen Kurenaido', var(--jp); font-weight:400; font-size:10.5px;
+    letter-spacing:.1em; text-transform:none;
+    border-bottom:0; position:relative;
+  }
+  .wbar::before{  /* のりしろ */
+    content:''; position:absolute; left:0; right:0; top:0; height:22px;
+    background:linear-gradient(180deg, rgba(0,0,0,.055), transparent); pointer-events:none;
+  }
+  .wx{color:rgba(55,50,40,.55); font-size:13px;}
+  .wx:hover{color:#c0402a;}
+  .wbody{padding:2px 14px 15px;}
+  .wbody p{
+    font-family:'Zen Kurenaido', var(--jp); font-weight:400;
+    font-size:13px; line-height:1.9; color:#37332a;
+  }
+  .wbody p b{font-weight:400; font-size:15px; border-bottom:2px solid rgba(192,64,42,.55); padding-bottom:1px;}
+  .wbtn{margin-top:12px;}
+  .wbtn a,.wbtn button{
+    font-family:'Zen Kurenaido', var(--jp); font-weight:400; font-size:11px; letter-spacing:.06em;
+    text-transform:none; border:1.5px solid rgba(55,50,40,.55); background:rgba(255,255,255,.5);
+    color:#37332a; padding:4px 14px;
+  }
+  .wbtn a{background:rgba(255,255,255,.8);}
+  .wbtn a:hover{background:#fff;}
+  .wbtn button:hover{background:rgba(255,255,255,.85); color:#37332a;}
+
+  .w1{background:#f7e07c; transform:rotate(-2.4deg);}
+  .w2{background:#f8b3c6; transform:rotate(1.8deg);}
+  .w3{background:#a9d8f4; transform:rotate(-1.4deg);}
+
+  .reopen{background:#b6e3ad; border:0; box-shadow:1px 4px 7px rgba(70,58,34,.26);
+    font-family:'Zen Kurenaido', var(--jp); font-weight:400; font-size:11px; letter-spacing:.06em;
+    text-transform:none; border-radius:0; padding:8px 16px;}
+  .reopen:hover{background:#c6ecbe;}
+
+  /* アイコンのナビを戻す */
+  .icons{
+    position:absolute; z-index:7; left:50%; bottom:clamp(14px,2.4vh,26px);
+    transform:translateX(-50%); display:flex; gap:clamp(10px,1.8vw,22px);
+  }
+  .ic{display:flex; flex-direction:column; align-items:center; gap:4px;
+    background:var(--paper-2); border:2px solid var(--ink); border-radius:14px;
+    padding:8px 12px 7px; box-shadow:3px 3px 0 var(--ink);
+    transition:transform .16s ease, box-shadow .16s ease;}
+  .ic:hover{transform:translate(-2px,-3px); box-shadow:6px 7px 0 var(--pink);}
+  .ic svg{width:clamp(20px,2.4vw,28px); height:auto;}
+  .ic .sk{stroke-width:2.6; opacity:.8;}
+  .ic span{font-family:var(--sans); font-weight:700; font-size:8px; letter-spacing:.14em; text-transform:uppercase;}
+
+  @media (max-width:860px){
+    .icons{position:static; transform:none; justify-content:center; flex-wrap:wrap; margin:16px 0 8px;}
+    .win{width:auto; margin:0 clamp(14px,4vw,24px) 12px;}
+  }
+</style>
+
+<style>
+  /* ================= FigJam のような盤面 ================= */
+  html,body{height:100%; overflow:hidden;}
+  #viewport{
+    position:fixed; inset:0; z-index:1; overflow:hidden;
+    cursor:grab; touch-action:none; overscroll-behavior:none;
+  }
+  #viewport.grabbing{cursor:grabbing;}
+  #canvas{
+    position:absolute; left:0; top:0; width:4300px; height:3000px;
+    transform-origin:0 0; will-change:transform;
+  }
+  .links{position:absolute; left:0; top:0; width:4300px; height:3000px; pointer-events:none; z-index:0; overflow:visible;}
+
+  /* 盤面の上に、板を置く */
+  #canvas > section, #canvas > main, #canvas > footer{position:absolute !important;}
+  #canvas .top    {left:0px;    top:0px;    width:1780px; height:1020px; min-height:0; padding:70px 0 0;}
+  #canvas main    {left:0; top:0; width:0; height:0; background:none;}
+  #canvas main > section{position:absolute !important;}
+  #canvas #about  {width:1220px;}
+  #canvas #works  {width:1640px;}
+  #canvas #skills {width:1220px;}
+  #canvas footer  {width:680px; margin:0; padding:16px 0 0;}
+
+  /* 板そのもの */
+  #canvas main > section, #canvas footer{
+    background:rgba(252,251,246,.80); border:2px solid var(--ink);
+    box-shadow:7px 8px 0 rgba(28,26,22,.16);
+    padding:clamp(26px,3vw,46px) 0;
+  }
+  #canvas main > section .wrap{max-width:none; padding:0 clamp(24px,3vw,44px);}
+  #canvas main > section + section{border-top:2px solid var(--ink);}
+  #canvas .about{background:rgba(252,251,246,.86);}
+  #canvas .contact{background:rgba(252,251,246,.86);}
+
+  /* 板の見出しラベル */
+  #canvas main > section::before{
+    content:attr(data-label); position:absolute; left:-2px; top:-30px;
+    background:var(--ink); color:var(--paper);
+    font-family:var(--sans); font-weight:700; font-size:10px; letter-spacing:.2em;
+    text-transform:uppercase; padding:6px 14px;
+  }
+
+  /* 盤面では縦スクロール前提の仕掛けを止める */
+  .strip{height:auto !important;}
+  .stripPin{position:static !important; height:auto !important; overflow:visible !important;}
+  .track{flex-wrap:wrap; transform:none !important; padding:0 !important;}
+  .track .gcard{flex:0 0 calc(25% - 18px);}
+  .stripHint{display:none;}
+  .reveal, .wipe, .rise{opacity:1 !important; transform:none !important; clip-path:none !important;}
+  .sec-top h2 span{transform:none !important;}
+  .progress{display:none;}
+  .marquee{display:none;}
+
+  /* 操作盤 */
+  .hud{
+    position:fixed; z-index:140; left:50%; bottom:16px; transform:translateX(-50%);
+    display:flex; align-items:center; gap:6px; padding:6px;
+    background:var(--paper-2); border:2px solid var(--ink); border-radius:999px;
+    box-shadow:4px 5px 0 rgba(28,26,22,.2);
+  }
+  .hb{
+    font-family:var(--sans); font-weight:700; font-size:9.5px; letter-spacing:.14em;
+    text-transform:uppercase; background:none; border:0; border-radius:999px;
+    padding:7px 13px; cursor:pointer; white-space:nowrap;
+  }
+  .hb:hover{background:var(--yellow);}
+  .hsep{width:1.5px; height:20px; background:var(--line); margin:0 3px;}
+  .hz{font-family:var(--sans); font-weight:700; font-size:9.5px; letter-spacing:.08em; min-width:40px; text-align:center;}
+  .panhint{
+    position:fixed; z-index:140; left:50%; bottom:64px; transform:translateX(-50%);
+    font-family:'Zen Kurenaido', var(--jp); font-size:11.5px; color:rgba(55,50,40,.66);
+    background:rgba(252,251,246,.9); padding:4px 12px; border-radius:999px;
+    transition:opacity .6s ease;
+  }
+  .panhint.off{opacity:0;}
+
+  header{z-index:150;}
+  .viewer{z-index:200;}
+
+  @media (max-width:860px){
+    html,body{overflow:auto; height:auto;}
+    #viewport{position:static; overflow:visible; cursor:auto;}
+    #canvas{position:static; width:auto; height:auto; transform:none !important;}
+    #canvas > section, #canvas > main, #canvas > footer,
+    #canvas main > section{position:static !important; left:auto; top:auto; width:auto; height:auto;}
+    #canvas main{width:auto; height:auto;}
+    #canvas main > section::before{display:none;}
+    .links{display:none;}
+    .hud{flex-wrap:wrap; justify-content:center; width:calc(100% - 20px); border-radius:18px;}
+    .panhint{display:none;}
+    .marquee{margin:0; position:static; width:auto; border-left:0; border-right:0;}
+    .track .gcard{flex:0 0 calc(50% - 10px);}
+  }
+</style>
+
+<style>
+  /* 盤面では文字を選ばせない（読む場所だけ許可） */
+  #canvas{user-select:none; -webkit-user-select:none;}
+  .viewer, .viewer *{user-select:text; -webkit-user-select:text;}
+  #canvas .fcard .one, #canvas .about .body, #canvas .tl{user-select:text; -webkit-user-select:text;}
+
+  /* ================= 操作スティック ================= */
+  .stick{
+    position:fixed; z-index:145; right:22px; bottom:78px;
+    width:112px; height:112px; border-radius:50%;
+    background:rgba(252,251,246,.92); border:2px solid var(--ink);
+    box-shadow:4px 5px 0 rgba(28,26,22,.2);
+    touch-action:none; cursor:grab;
+  }
+  .stick:active{cursor:grabbing;}
+  .stick::before, .stick::after{
+    content:''; position:absolute; background:rgba(28,26,22,.14);
+  }
+  .stick::before{left:50%; top:12px; bottom:12px; width:1.5px; transform:translateX(-50%);}
+  .stick::after{top:50%; left:12px; right:12px; height:1.5px; transform:translateY(-50%);}
+  .stick .knob{
+    position:absolute; left:50%; top:50%; width:44px; height:44px; margin:-22px 0 0 -22px;
+    border-radius:50%; background:var(--yellow); border:2px solid var(--ink);
+    box-shadow:2px 3px 0 rgba(28,26,22,.28);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--sans); font-weight:700; font-size:8px; letter-spacing:.1em;
+  }
+  .stick.on .knob{background:var(--pink); color:#fff;}
+  @media (max-width:860px){ .stick{display:none;} }
+</style>
+
+<style>
+  .mail{border-bottom:1.5px solid var(--pink); padding-bottom:1px;}
+  .mail:hover{color:var(--pink);}
+</style>
+  <link rel="preload" as="image" href="images/sensor_a.jpg">
+  <link rel="preload" as="image" href="images/design_b.jpg">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="wob" x="-25%" y="-25%" width="150%" height="150%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.026" numOctaves="2" seed="5" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6"/>
+  </filter>
+</svg>
+
+<div class="bg" aria-hidden="true">
+  <span class="dotgrid"></span>
+  <span class="iso"></span>
+  <span class="perf"></span>
+  <span class="stain"></span>
+  <span class="grunge"></span>
+  <span class="crease"></span>
+  <span class="grain"></span>
+  <span class="vig"></span>
+</div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+<div class="progress" id="progress"></div>
+
+
+
+<header>
+  <div class="mark">SUGISHIMA HIKARU</div>
+  <div class="sub">Graphic × Product ／ 28卒</div>
+  <nav>
+    <a href="#works">Works</a><a href="#about">About</a><a href="#skills">Skills</a>
+  </nav>
+</header>
+
+<div id="viewport">
+  <div id="canvas">
+
+    <svg class="links" viewBox="0 0 4300 3000" aria-hidden="true">
+      <g class="sk thin dash">
+        <path d="M1760 500 C 1830 500, 1830 420, 1900 420"/>
+        <path d="M640 1030 C 640 1090, 640 1090, 640 1150"/>
+        <path d="M1560 1760 C 1700 1760, 1700 1720, 1840 1720"/>
+        <path d="M2520 1980 C 2620 1980, 2640 2010, 2740 2010"/>
+      </g>
+      <g class="sk hot">
+        <path d="M1888 420 l -13 -6 M1888 420 l -12 7"/>
+        <path d="M640 1140 l -6 -12 M640 1140 l 7 -12"/>
+        <path d="M1828 1720 l -13 -6 M1828 1720 l -12 7"/>
+        <path d="M2728 2010 l -13 -6 M2728 2010 l -12 7"/>
+      </g>
+    </svg>
+
+<!-- ========== 1. TOP ========== -->
+<section class="top" id="top">
+  <canvas id="stage" aria-hidden="true"></canvas>
+  <div id="caps" aria-hidden="true"></div>
+
+  <!-- 箱の展開図 -->
+  <svg class="doodle dd-net" viewBox="0 0 260 200" aria-hidden="true">
+    <g class="sk">
+      <path d="M70 40 h60 v50 h-60 Z"/>
+      <path d="M130 40 h48 v50 h-48 Z"/>
+      <path d="M70 90 h60 v56 h-60 Z"/>
+      <path d="M130 90 h48 v56 h-48 Z"/>
+      <path d="M70 40 v-22 h60 v22"/>
+      <path d="M70 146 v20 h60 v-20"/>
+      <path d="M178 40 h26 v50 h-26 Z"/>
+    </g>
+    <g class="sk dash">
+      <path d="M70 90 h108"/><path d="M130 18 v148"/><path d="M178 40 v50"/>
+    </g>
+    <g class="sk hot">
+      <path d="M196 116 c 16 -14, 22 -34, 8 -46"/>
+      <path d="M204 70 l -7 9 M204 70 l 8 6"/>
+    </g>
+  </svg>
+
+  <!-- 等角の立方体 -->
+  <svg class="doodle dd-iso" viewBox="0 0 180 190" aria-hidden="true">
+    <g class="sk">
+      <path d="M90 26 L156 64 L156 130 L90 168 L24 130 L24 64 Z"/>
+      <path d="M90 26 L90 92 M90 92 L156 130 M90 92 L24 130"/>
+    </g>
+    <g class="sk thin dash"><path d="M24 64 L90 102 L156 64"/><path d="M90 102 L90 168"/></g>
+    <g class="sk hot"><path d="M120 150 l 26 14 M146 164 l -10 -2 M146 164 l -2 -10"/></g>
+  </svg>
+
+  <!-- ラフ案のサムネイル -->
+  <svg class="doodle dd-thumb" viewBox="0 0 250 120" aria-hidden="true">
+    <g class="sk">
+      <rect x="8" y="14" width="62" height="90"/>
+      <path d="M18 30 h40 M18 40 h30 M18 84 h42 M18 92 h24"/>
+      <rect x="92" y="14" width="62" height="90"/>
+      <path d="M102 26 h42 v34 h-42 Z M102 74 h42 M102 84 h28"/>
+      <rect x="176" y="14" width="62" height="90"/>
+      <circle cx="207" cy="50" r="17"/><path d="M186 84 h42 M186 93 h26"/>
+    </g>
+    <g class="sk hot"><ellipse cx="207" cy="59" rx="44" ry="58" transform="rotate(-4 207 59)"/></g>
+  </svg>
+
+  <!-- 寸法線 -->
+  <svg class="doodle dd-dim" viewBox="0 0 220 60" aria-hidden="true">
+    <g class="sk thin">
+      <path d="M14 10 v40 M206 10 v40"/>
+      <path d="M14 30 h192"/>
+      <path d="M14 30 l 12 -6 M14 30 l 12 6 M206 30 l -12 -6 M206 30 l -12 6"/>
+    </g>
+  </svg>
+
+  <div class="rail l"><span>MOVE YOUR CURSOR — THE WORK FLOATS — CLICK ANY SHEET</span></div>
+  <div class="rail r"><span>GRAPHIC &amp; PRODUCT — 2024 / 2026 — NAGOYA JAPAN</span></div>
+
+  <div class="topin">
+    <h1 class="bigname"><span class="hl">HIKARU</span><br>SUGISHIMA</h1>
+    <div class="chip-y">GRAPHIC DESIGN × PRODUCT DESIGN ／ 名古屋文理大学 3年</div>
+  </div>
+
+  <div class="topfoot">
+    <span class="loc">NAGOYA, JAPAN — SCROLL ↓</span>
+  </div>
+
+  <!-- 場の上に置かれた窓 -->
+  <div class="win w1" data-win="1">
+    <div class="wbar"><span>メモ</span><button class="wx" aria-label="はがす">✕</button></div>
+    <div class="wbody">
+      <p><b>採用・設置 5点</b><br>課題じゃなく、<br>実際に世に出たもの。</p>
+      <div class="wbtn"><a href="#works">見る</a><button class="wno">あとで</button></div>
+    </div>
+  </div>
+
+  <div class="win w2" data-win="2">
+    <div class="wbar"><span>じぶん</span><button class="wx" aria-label="はがす">✕</button></div>
+    <div class="wbody">
+      <p><b>杉島 輝 ／ 28卒</b><br>名古屋文理大学 3年<br>グラフィック × プロダクト<br>就職活動中</p>
+      <div class="wbtn"><a href="#about">見る</a><button class="wno">あとで</button></div>
+    </div>
+  </div>
+
+  <div class="win w3" data-win="3">
+    <div class="wbar"><span>つかいかた</span><button class="wx" aria-label="はがす">✕</button></div>
+    <div class="wbody">
+      <p>浮いてる作品に<b>カーソルを合わせる</b>。<br>押すと詳細がひらく。<br>この付箋は動かせる。</p>
+      <div class="wbtn"><button class="wno">とじる</button></div>
+    </div>
+  </div>
+
+  <!-- アイコンのナビ -->
+  <div class="icons">
+    <a href="#works" class="ic">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect class="sk" x="6" y="9" width="20" height="25"/><rect class="sk" x="14" y="5" width="20" height="25"/></svg>
+      <span>Works</span></a>
+    <a href="#about" class="ic">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle class="sk" cx="20" cy="14" r="7"/><path class="sk" d="M7 34 C 9 24, 31 24, 33 34"/></svg>
+      <span>About</span></a>
+    <a href="#skills" class="ic">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path class="sk" d="M6 30 L14 18 L22 26 L34 8"/><path class="sk" d="M26 8 H34 V16"/></svg>
+      <span>Skills</span></a>
+  </div>
+
+  <!-- 書き込みの走り書き -->
+  <div class="memo m1">面で刷る。<br>折ると構造になる。</div>
+  <div class="memo m2">↑ ここ、実際に採用された</div>
+  <div class="memo m3">もっと立体で<br>考えてみる</div>
+
+  <button class="reopen" id="reopen" hidden>窓をもどす</button>
+</section>
+
+<!-- ========== 2. WORKS ========== -->
+<section class="sec" id="works" data-label="Works ／ つくったもの">
+  <div class="wrap">
+    <div class="sec-top">
+      <h2>WORKS</h2>
+          </div>
+
+    <div class="sorter">
+      <button class="on" data-order="product">立体から</button>
+      <button data-order="graphic">平面から</button>
+    </div>
+
+    <div class="feature" id="feature"></div>
+
+    <div class="otherhead">
+      <h3>OTHER</h3>
+      <span id="otherCount"></span>
+    </div>
+  </div>
+  <div class="strip" id="strip">
+    <div class="stripPin">
+      <div class="track" id="grid"></div>
+    </div>
+  </div>
+  <div class="wrap">
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="mrow" id="mrow"></div></div>
+
+<!-- ========== 3. ABOUT ========== -->
+<section class="about" id="about">
+  <svg class="bgdoodle bd-a" viewBox="0 0 200 220" aria-hidden="true">
+    <g class="sk">
+      <path d="M40 60 c 0 -26, 26 -40, 60 -40 c 34 0, 60 14, 60 40 c 0 24, -22 34, -44 44 c -14 6, -16 14, -16 26"/>
+      <path d="M100 186 l 0 8"/>
+    </g>
+    <g class="sk hot"><ellipse cx="100" cy="112" rx="86" ry="104" transform="rotate(5 100 112)"/></g>
+  </svg>
+  <svg class="bgdoodle bd-b" viewBox="0 0 220 130" aria-hidden="true">
+    <g class="sk">
+      <path d="M18 108 c 26 -66, 60 -92, 96 -78 c 34 14, 24 62, -4 66 c -24 4, -30 -22, -6 -30 c 30 -10, 66 12, 92 44"/>
+      <path d="M196 110 l 6 -18 M196 110 l -18 -4"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="in">
+      <div>
+        <div class="lead">人に喜んでもらいたい。<br>喜んでいる姿を見るのが生き甲斐。</div>
+        <div class="body">
+          <p>数ある方法の中で、向いていたデザインで喜んでもらいたい。</p>
+          <p>グラフィックデザイン × プロダクトデザインといった、立体的にデザインすることを得意とする。他にも 3DCG、CAD、ディスプレイ、AI活用を研究。</p>
+          <p>大学ではデザインプロジェクトのリーダーとして、チラシ制作のディレクションや、学校祭に出展した出店のディレクションを担当。</p>
+        </div>
+      </div>
+      <div class="side">
+        <div><dt>University</dt><dd>名古屋文理大学<br>情報メディア学部 情報メディア学科</dd></div>
+        <div class="hl"><dt>Year</dt><dd>3年 ／ 2028年3月卒業見込（28卒）</dd></div>
+        <div><dt>Role</dt><dd>デザインプロジェクト 26年度リーダー</dd></div>
+        <div><dt>Internship</dt><dd>株式会社クラウンパッケージ（2026.08）</dd></div>
+        <div class="hl"><dt>Status</dt><dd>就職活動中</dd></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. SKILLS ========== -->
+<section class="sec" id="skills" data-label="Skills ／ できること">
+  <svg class="bgdoodle bd-d" viewBox="0 0 200 190" aria-hidden="true">
+    <g class="sk">
+      <path d="M30 150 L30 40 L100 14 L170 40 L170 150 L100 176 Z"/>
+      <path d="M30 40 L100 66 L170 40 M100 66 L100 176"/>
+    </g>
+    <g class="sk thin dash"><path d="M100 14 L100 66"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="sec-top"><h2>SKILLS</h2></div>
+    <div class="skills">
+      <div>
+        <h3>Tools</h3>
+        <div class="sk"><span class="nm">Illustrator</span><span class="bar"><i data-w="85"></i></span></div>
+        <div class="sk"><span class="nm">Photoshop</span><span class="bar"><i data-w="80"></i></span></div>
+        <div class="sk"><span class="nm">Fusion360 / Shapr3D</span><span class="bar"><i data-w="70"></i></span></div>
+        <div class="sk"><span class="nm">Womp</span><span class="bar"><i data-w="70"></i></span></div>
+        <div class="sk"><span class="nm">Blender</span><span class="bar"><i data-w="60"></i></span></div>
+        <div class="sk"><span class="nm">Figma</span><span class="bar"><i data-w="75"></i></span></div>
+      </div>
+      <div>
+        <h3>Timeline</h3>
+        <ul class="tl">
+          <li><b>2024.03</b><span>愛知県立佐屋高等学校 卒業</span></li>
+          <li><b>2024.04</b><span>名古屋文理大学 入学</span></li>
+          <li><b>2024.05</b><span>デザインプロジェクト 所属</span></li>
+          <li><b>2025.04</b><span>「デジタルアート入門」SA 担当</span></li>
+          <li><b>2026.04</b><span>デザインプロジェクト 26年度リーダー</span></li>
+          <li><b>2026.08</b><span>株式会社クラウンパッケージ インターン参加</span></li>
+          <li><b>2026.09</b><span>「Webデザイン」SA 担当</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <span>© 2026 Sugishima Hikaru</span>
+  <span>Nagoya / Aichi / Japan</span>
+</footer>
+
+  </div>
+</div>
+
+<div class="hud">
+  <button class="hb" data-go="about">← ABOUT</button>
+  <button class="hb" data-go="top">● TOP</button>
+  <button class="hb" data-go="works">WORKS →</button>
+  <button class="hb" data-go="skills">SKILLS ↓</button>
+  <span class="hsep"></span>
+  <button class="hb" id="zoomOut" aria-label="縮小">−</button>
+  <span class="hz" id="zoomVal">100%</span>
+  <button class="hb" id="zoomIn" aria-label="拡大">＋</button>
+  <button class="hb" id="fitAll">全体</button>
+</div>
+<div class="stick" id="stick" aria-label="盤面を動かす"><span class="knob">PAN</span></div>
+<div class="panhint" id="panhint">ドラッグで動かす ／ ホイールで拡大縮小</div>
+
+<div class="viewer" id="viewer">
+  <div class="tint"></div>
+  <div class="sheet">
+    <div class="bar">
+      <span class="tag" id="vKind">Graphic</span>
+      <span class="tag" id="vAdopt" style="display:none">採用</span>
+      <button class="x" id="vClose">Close ✕</button>
+    </div>
+    <div class="inner">
+      <h3 id="vName">作品</h3>
+      <dl>
+        <div><dt>課題</dt><dd id="vBrief"></dd></div>
+        <div><dt>やったこと</dt><dd id="vDid"></dd></div>
+        <div><dt>結果</dt><dd id="vResult"></dd></div>
+        <div><dt>制作期間</dt><dd id="vPeriod"></dd></div>
+        <div><dt>ツール</dt><dd id="vTools"></dd></div>
+      </dl>
+      <a class="live" id="vLive" href="#" target="_blank" rel="noopener" style="display:none">サイトを見る →</a>
+      <div class="shots" id="vShots"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  const IMG = {
+    sensor_a:'images/sensor_a.jpg', sensor_b:'images/sensor_b.jpg',
+    civic:'images/civic.jpg',
+    design_b:'images/design_b.jpg', design_c:'images/design_c.jpg',
+    movie_a:'images/movie_a.jpg', movie_b:'images/movie_b.jpg',
+    polaris_a:'images/polaris_a.jpg', polaris_b:'images/polaris_b.jpg',
+    room:'images/room.jpg', cracker:'images/cracker.jpg',
+    toilet_a:'images/toilet_a.jpg', toilet_b:'images/toilet_b.jpg', toilet_c:'images/toilet_c.jpg',
+    toilet_d:'images/toilet_d.jpg', toilet_e:'images/toilet_e.jpg',
+    qr:'images/qr.jpg', oc_board:'images/oc_board.jpg',
+    oc_sign:'images/oc_sign.jpg', kinen_a:'images/kinen_a.jpg', kinen_proto:'images/kinen_proto.jpg'
+  };
+
+  const W = {
+    ocboard:{
+      one:'来場者を迎える案内看板を、提案から制作まで。',
+      t:'オープンキャンパス用 案内看板', g:'Product', year:'2025.05',
+      period:'3ヶ月', tools:'Womp / Illustrator', adopted:true,
+      brief:'オープンキャンパスで、施設紹介の案内看板があれば来場者のワクワクに繋がるのではと考え、自ら提案。',
+      did:'学科のイメージカラーの青を使い、学生との繋がりを表現。遊び心がありつつ完成度の高い3Dモデルを配置し、「ここの学生は遊び心がありつつ高みを目指す集団だ」というメッセージを持たせた。ボードのデザインから、のりパネを使ったパネル化まで担当。',
+      result:'大学の広報物として採用され、当日会場で使用された。',
+      shots:['oc_board'], main:'oc_board'
+    },
+    qr:{
+      one:'どの角度からも読める、組み立て式の三面看板。',
+      t:'大学の広報用 QRコード看板', g:'Product', year:'2026.03',
+      period:'3週間', tools:'Fusion360', adopted:true,
+      brief:'大学の広報課から「公式LINEへの誘導看板が欲しい」との依頼。3年生とのグループ制作で、自分は看板の留め具と展示方法を担当。',
+      did:'3面式に板を3枚使い、どの角度から見ても看板が見える構造に設計。デザインの邪魔をしないよう留め具は四隅に配置。持ち運べるよう組み立て式にした。',
+      result:'大学の広報物として採用され、学内に設置された。',
+      shots:['qr'], main:'qr'
+    },
+    kinen:{
+      one:'持ち帰りすぎを止める、立体のPOP。',
+      t:'記念品POP', g:'Product', year:'2025.05',
+      period:'2週間', tools:'Illustrator / Shapr3D', adopted:true,
+      brief:'オープンキャンパスの記念品配布で、「一つだけどうぞ」と声をかけても複数個持ち帰る人が見られた。配布物の付近にPOPがあれば止められるのではと考えた。',
+      did:'飛び出している立体感で目をひき、持ち帰りすぎを抑止。同時に「この大学はこんなおしゃれなPOPを作っている」と伝わる造形にした。',
+      result:'大学の広報物として採用され、配布台に設置された。',
+      shots:['oc_sign','kinen_a','kinen_proto'], main:'oc_sign'
+    },
+    toilet:{
+      one:'斜めからでも方向が読める、立体の矢印。',
+      t:'お手洗い 誘導サイン', g:'Product', year:'2025.07',
+      period:'—', tools:'Illustrator / 3Dプリンタ', adopted:true,
+      brief:'「女性用お手洗いは反対側にあります」を、通りすがりに一目で伝える必要があった。',
+      did:'矢印を平面の記号ではなく立体として起こし、進行方向に厚みを持たせて、斜めから見ても方向が読めるようにした。文字は一文字ずつ出力して面に貼り込み、地の色とのコントラストで可読性を確保。',
+      result:'学内に実際に設置された。',
+      shots:['toilet_a','toilet_b','toilet_c','toilet_d','toilet_e'], main:'toilet_a'
+    },
+    sensor:{
+      one:'高校生に向けた、入試のチラシ。',
+      t:'センサーの森（入試関連チラシ）', g:'Graphic', year:'2026.05',
+      period:'4週間', tools:'Illustrator / Womp', adopted:true,
+      brief:'大学の入試に関するチラシ。高校生に向けて、ワークショップの内容を伝える必要があった。',
+      did:'簡単かつ楽しそうで、高校生の目をひくデザインに。表面のビジュアルと裏面の情報面をセットで設計した。',
+      result:'大学の配布物として採用された。',
+      shots:['sensor_a','sensor_b'], main:'sensor_a'
+    },
+    design:{
+      one:'学科パンフレット。表紙と、情報量の多い誌面。',
+      t:'メディアデザインコース チラシ', g:'Graphic', year:'2026',
+      period:'—', tools:'Illustrator / Photoshop', adopted:true,
+      brief:'学科パンフレットのメディアデザインコース面。表紙と、情報量の多い誌面の両方を担当。',
+      did:'表紙「ひらめきをカタチに」は、紙・図形・網点が飛び散る構成でアイデアが形になる瞬間を表現。裏面はコース概要・授業紹介・教員紹介・カリキュラム・進路を一枚に収める情報設計を行った。',
+      result:'大学の配布物として採用された。',
+      shots:['design_b','design_c'], main:'design_b'
+    },
+    movie:{
+      one:'撮る人の視点を、そのまま表紙に。',
+      t:'映像メディアコース チラシ', g:'Graphic', year:'2026',
+      period:'—', tools:'Illustrator / Photoshop', adopted:true,
+      brief:'同じ学科パンフレットの映像メディアコース面。',
+      did:'夕景のシルエットに縦組みのタイトルを重ね、撮る人の視点をそのまま表紙に。裏面は実習風景の写真を軸に、コースを超えた複合的な学びを構成した。',
+      result:'大学の配布物として採用された。',
+      shots:['movie_a','movie_b'], main:'movie_a'
+    },
+    civic:{
+      one:'企画中のホワイトボードを、そのままポスターに。',
+      t:'第63回 稲沢市民展ポスター', g:'Graphic', year:'2026.06',
+      period:'5週間', tools:'Illustrator / Photoshop / 一眼レフ / BambooLab / Fusion360', adopted:false,
+      brief:'市民展の作品募集ポスター。情報量の多い公募要項を、目をひく形で伝える必要があった。',
+      did:'壁に付箋や走り書きがあったら目をひくのでは、と考えた。今まさにアイデアを出し合って企画しているホワイトボードを表現し、市民の皆で作り上げる展覧会というライブ感を出した。タイトル文字は立体で出力して撮影している。',
+      result:'公募ポスターとして掲示された。',
+      shots:['civic'], main:'civic'
+    },
+    polaris:{
+      one:'店内のプラネタリウムを、画面の中へ。',
+      t:'CAFE POLARIS', g:'Web', year:'2026',
+      period:'—', tools:'Figma / STUDIO / Photoshop', adopted:false,
+      brief:'鎌倉の星空カフェバーのWebサイト。店内のプラネタリウムの体験を、画面上で伝える必要があった。',
+      did:'月・星座・星の軌跡を重ねたキービジュアルから始め、下へ進むほど店内の灯りに近づいていく構成に。手書きの見出しで、暗さの中に人の気配を残した。',
+      result:'サイトとして公開中。',
+      shots:['polaris_a','polaris_b'], main:'polaris_a',
+      live:'https://preview.studio.site/live/XKOk1l5Za4/cafe%20polaris'
+    },
+    room:{
+      one:'ミニチュアの箱庭のような、小部屋。',
+      t:'小さい部屋のコーヒー', g:'3DCG', year:'2025',
+      period:'—', tools:'Blender', adopted:false,
+      brief:'アイソメトリックの小部屋シリーズ。',
+      did:'淡い色面とやわらかい陰影で、ミニチュアの箱庭のような密度を狙った。',
+      result:'—', shots:['room'], main:'room'
+    },
+    cracker:{
+      one:'光沢と影だけで奥行きを出した、紙吹雪。',
+      t:'クラッカー', g:'3DCG', year:'2025',
+      period:'—', tools:'Blender', adopted:false,
+      brief:'白背景に浮かぶクラッカーと紙吹雪。',
+      did:'ノートや星の小物を散らし、光沢と柔らかい影だけで奥行きを出した。',
+      result:'—', shots:['cracker'], main:'cracker'
+    }
+  };
+
+  /* 受ける会社によって、見せる順番を入れ替える */
+  const ORDER = {
+    product:['ocboard','qr','kinen','toilet','sensor','design','movie','civic','polaris','room','cracker'],
+    graphic:['sensor','design','movie','civic','ocboard','qr','kinen','toilet','polaris','room','cracker']
+  };
+
+  const gclass = g => 'g-' + g.toLowerCase();
+  const feature=document.getElementById('feature'), grid=document.getElementById('grid'),
+        otherCount=document.getElementById('otherCount');
+
+  function render(order){
+    const ids = ORDER[order];
+    const top3 = ids.slice(0,3), rest = ids.slice(3);
+
+    feature.innerHTML = top3.map((id,i)=>{
+      const w = W[id];
+      return `<button class="fcard" data-id="${id}">
+        <div class="shot">
+          <span class="no">${String(i+1).padStart(2,'0')}</span>
+          <img class="base" src="${IMG[w.main]}" alt="${w.t}">
+          ${w.shots[1] ? `<img class="alt" src="${IMG[w.shots[1]]}" alt="">` : ''}
+        </div>
+        <div class="body">
+          <div class="tags">
+            <span class="tag ${gclass(w.g)}">${w.g}</span>
+            ${w.adopted?'<span class="tag adopted">採用</span>':''}
+          </div>
+          <h3>${w.t}</h3>
+          <p class="one">${w.one}</p>
+          <div class="spec"><span>${w.year}</span><span>${w.period}</span><span>${w.tools}</span></div>
+          <span class="more">詳しく見る →</span>
+        </div>
+      </button>`;
+    }).join('');
+
+    grid.innerHTML = rest.map(id=>{
+      const w = W[id];
+      return `<button class="gcard" data-id="${id}">
+        <div class="shot"><img src="${IMG[w.main]}" alt="${w.t}" loading="lazy"></div>
+        <div class="t">
+          <span class="tag ${gclass(w.g)}">${w.g}</span>
+          ${w.adopted?'<span class="tag adopted">採用</span>':''}
+        </div>
+        <h4>${w.t}</h4>
+        <div class="spec">${w.year} ・ ${w.tools.split(' / ')[0]}</div>
+      </button>`;
+    }).join('');
+
+    otherCount.textContent = `その他 ${rest.length}点`;
+    document.querySelectorAll('.fcard,.gcard').forEach(b=>
+      b.addEventListener('click', ()=>open(b.dataset.id)));
+  }
+
+  document.querySelector('.sorter').addEventListener('click', e=>{
+    const b = e.target.closest('button'); if(!b) return;
+    document.querySelectorAll('.sorter button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    render(b.dataset.order);
+    document.querySelectorAll('.fcard').forEach((c,i)=>c.animate(
+      [{opacity:0, transform:'translateY(14px)'},{opacity:1, transform:'none'}],
+      {duration:520, delay:i*70, easing:'cubic-bezier(.2,.9,.3,1)', fill:'backwards'}));
+  });
+
+
+
+
+  /* ============ 紙の上に浮かぶ作品 ============ */
+  (function float3d(){
+    const cv = document.getElementById('stage');
+    const capHost = document.getElementById('caps');
+    if(!cv || typeof THREE === 'undefined') return;
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* 黄金長方形の対角線と、その垂線でできる交点（アームズポイント）に置く。
+       主対角線 左下→右上、垂線 左上↘ と 右下↖。
+       交点は対角線上の 0.382 と 0.618 の位置。
+       大きさと奥行きは φ=1.618 の段階。*/
+    const PHI = 1.618033988749;
+    const S = {a:1, b:Math.pow(PHI,-0.28), c:Math.pow(PHI,-0.5)};   /* 1 : 0.874 : 0.786 */
+    const GX = 5.35, GY = 5.35/PHI;                 /* 版面の半幅・半高（1 : 1/φ） */
+    const T1 = 1/(PHI*PHI), T2 = 1-1/(PHI*PHI);     /* 0.382 / 0.618 */
+    const mx = t => -GX + 2*GX*t;
+    const my = t => -GY + 2*GY*t;
+
+    const FLOATING = [
+      /* ── 2つの交点。ここが一番強い。採用された立体を置く ── */
+      {id:'ocboard', pos:[mx(T2), my(T2),-0.60], rot:[-.05,.18,-.04], sz:S.a},  /* 右上の交点 */
+      {id:'kinen',   pos:[mx(T1), my(T1),-1.40], rot:[ .05,-.14,-.05], sz:S.a}, /* 左下の交点 */
+
+      /* ── 主対角線の上（左下→右上）── */
+      {id:'sensor',  pos:[mx(.13), my(.13),-3.10], rot:[ .06,.21,.05],  sz:S.b},
+      {id:'qr',      pos:[mx(.87), my(.87),-2.20], rot:[ .04,-.20,.04], sz:S.a},
+
+      /* ── 垂線の上（左上↘ / 右下↖）── */
+      {id:'design',  pos:[mx(.22), my(.90),-4.20], rot:[-.06,.12,.04],  sz:S.b},
+      {id:'civic',   pos:[mx(.78), my(.10),-4.20], rot:[ .07,-.11,-.04],sz:S.b},
+
+      /* ── 分割線の交点、奥へ ── */
+      {id:'polaris', pos:[mx(.50), my(.06),-5.70], rot:[ .05,-.16,.04], sz:S.c},
+      {id:'room',    pos:[mx(.97), my(.52),-7.20], rot:[-.04,.14,.05],  sz:S.c}
+    ];
+
+    const renderer = new THREE.WebGLRenderer({canvas:cv, antialias:true, alpha:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(46, 1, .1, 100);
+    camera.position.set(0,0,7.6);
+    const raycaster = new THREE.Raycaster();
+    const pointer = new THREE.Vector2(-2,-2);
+    const camTarget = {x:0,y:0};
+    const v = new THREE.Vector3();
+    const cards = [], disposables = [];
+    const spread = {x:1, y:1};
+    let SHADOW_TEX = null;
+    function shadowMat(){
+      if(!SHADOW_TEX){
+        const c=document.createElement('canvas'); c.width=c.height=256;
+        const x=c.getContext('2d');
+        const g=x.createRadialGradient(128,128,34,128,128,128);
+        g.addColorStop(0,'rgba(40,34,26,.30)');
+        g.addColorStop(.55,'rgba(40,34,26,.12)');
+        g.addColorStop(1,'rgba(40,34,26,0)');
+        x.fillStyle=g; x.fillRect(0,0,256,256);
+        SHADOW_TEX = new THREE.CanvasTexture(c);
+        disposables.push(SHADOW_TEX);
+      }
+      const m = new THREE.SpriteMaterial({map:SHADOW_TEX, transparent:true, depthWrite:false});
+      disposables.push(m);
+      return m;
+    }
+
+    const label = document.createElement('div');
+    label.className = 'cap3';
+    capHost.appendChild(label);
+    const loader = new THREE.TextureLoader();
+
+    FLOATING.forEach((f,i)=>{
+      const w = W[f.id]; if(!w) return;
+      const g = new THREE.Group();
+      g.position.set(...f.pos); g.rotation.set(...f.rot);
+
+      const geo = new THREE.PlaneBufferGeometry(1,1); disposables.push(geo);
+      const back = new THREE.Sprite(shadowMat());
+      back.position.set(0.05,-0.06,-0.02);
+      const mat = new THREE.MeshBasicMaterial({transparent:true, opacity:0});
+      disposables.push(mat, back.material);
+      const front = new THREE.Mesh(geo, mat);
+
+      loader.load(IMG[w.main], tex=>{
+        tex.minFilter = THREE.LinearFilter; tex.generateMipmaps = false; tex.anisotropy = 4;
+        disposables.push(tex);
+        mat.map = tex; mat.needsUpdate = true;
+        const a = tex.image.width / tex.image.height;
+        const sc = Math.min(3.25/a, 3.25/PHI) * (f.sz || 1);   /* 横3.25 : 縦2.01 */
+        front.scale.set(sc*a, sc, 1);
+        back.scale.set(sc*a*1.16, sc*1.18, 1);
+        mat.opacity = 1;
+        /* 紙から立ち上がってくる */
+        const born = performance.now() + i*140;
+        g.userData.born = born;
+        g.userData.rise = 0;
+      });
+
+      g.add(back); g.add(front);
+      g.userData = {id:f.id, base:f.pos.slice(), baseRot:f.rot.slice(),
+                    phase:i*1.97, cur:1, target:1, hit:front, rise:0, born:0};
+      front.userData.group = g;
+      scene.add(g); cards.push(g);
+    });
+
+    function resize(){
+      const w = cv.clientWidth, h = cv.clientHeight;
+      if(!w || !h) return;
+      camera.aspect = w/h; camera.updateProjectionMatrix();
+      camera.position.z = 7.6 / Math.min(1, Math.max(.42, camera.aspect/1.5));
+      renderer.setSize(w,h,false);
+      /* 視野が広いほど、配置を内側へ寄せる */
+      const visW = 2*Math.tan(camera.fov*Math.PI/360)*camera.position.z*camera.aspect;
+      const visH = 2*Math.tan(camera.fov*Math.PI/360)*camera.position.z;
+      spread.x = Math.min(1, 14.2/visW);
+      spread.y = Math.min(1, 14.2/PHI/visH);   /* 版面は 1 : 1/φ */
+    }
+    new ResizeObserver(resize).observe(cv.parentElement); resize();
+
+    let hovered = null;
+    addEventListener('pointermove', e=>{
+      const r = cv.getBoundingClientRect();
+      pointer.x =  ((e.clientX-r.left)/r.width)*2-1;
+      pointer.y = -((e.clientY-r.top)/r.height)*2+1;
+      camTarget.x = pointer.x*1.1; camTarget.y = pointer.y*0.7;
+    }, {passive:true});
+    cv.addEventListener('click', ()=>{ if(hovered) open(hovered.userData.id); });
+
+    let t = 0;
+    (function loop(){
+      requestAnimationFrame(loop);
+      if(scrollY > innerHeight*1.15) return;
+      t += .0115;
+
+      camera.position.x += (camTarget.x - camera.position.x)*.05;
+      camera.position.y += (camTarget.y - camera.position.y)*.05;
+      camera.lookAt(0,0,0);
+
+      raycaster.setFromCamera(pointer, camera);
+      const hits = raycaster.intersectObjects(cards.map(c=>c.userData.hit), false);
+      const hg = hits.length ? hits[0].object.userData.group : null;
+      if(hg !== hovered){
+        hovered = hg;
+        document.body.style.cursor = hovered ? 'pointer' : '';
+        if(hovered){
+          const w = W[hovered.userData.id];
+          label.innerHTML = `<b>${w.t}</b><i>${w.g}${w.adopted?' ・ 採用':''}</i><u>詳しく見る →</u>`;
+          label.classList.add('on');
+        }else{
+          label.classList.remove('on');
+        }
+      }
+
+      const W2 = cv.clientWidth, H2 = cv.clientHeight;
+      cards.forEach(g=>{
+        const u = g.userData;
+        u.target = (g === hovered) ? 1.07 : 1;
+        if(u.born){
+          const e = Math.max(0, Math.min(1, (performance.now()-u.born)/900));
+          u.rise = 1-Math.pow(1-e,3);
+        }
+        u.cur += (u.target - u.cur)*.12;
+        g.scale.setScalar(u.cur * (u.rise !== undefined ? u.rise : 1));
+        const bx = u.base[0]*spread.x, by = u.base[1]*spread.y;
+        if(!reduce){
+          g.position.y = by + Math.sin(t*(.72+u.phase*.05) + u.phase)*.15;
+          g.position.x = bx + Math.cos(t*(.5+u.phase*.04) + u.phase)*.075;
+        }else{
+          g.position.x = bx; g.position.y = by;
+        }
+        const k = (g === hovered) ? 0 : 1;
+        g.rotation.x += ((u.baseRot[0]*k) - g.rotation.x)*.1;
+        g.rotation.y += ((u.baseRot[1]*k) - g.rotation.y)*.1;
+        g.updateMatrixWorld();
+
+        /* 名前は、いま見ている1枚にだけ出す */
+        if(g === hovered){
+          v.set(-.5,-.5,0); u.hit.localToWorld(v); v.project(camera);
+          label.style.left = ((v.x*.5+.5)*W2).toFixed(0)+'px';
+          label.style.top  = ((-v.y*.5+.5)*H2).toFixed(0)+'px';
+        }
+      });
+
+      renderer.render(scene, camera);
+    })();
+
+    addEventListener('pagehide', ()=>{ disposables.forEach(d=>d.dispose&&d.dispose()); renderer.dispose(); });
+  })();
+
+  render('product');
+
+  /* ---- viewer ---- */
+  const viewer=document.getElementById('viewer');
+  const vK=document.getElementById('vKind'), vA=document.getElementById('vAdopt'),
+        vN=document.getElementById('vName'), vB=document.getElementById('vBrief'),
+        vD=document.getElementById('vDid'), vR=document.getElementById('vResult'),
+        vP=document.getElementById('vPeriod'), vT=document.getElementById('vTools'),
+        vS=document.getElementById('vShots'), vL=document.getElementById('vLive'),
+        vC=document.getElementById('vClose');
+  function open(id){
+    const w=W[id]; if(!w) return;
+    vK.textContent=w.g; vK.className='tag '+gclass(w.g);
+    vA.style.display = w.adopted ? 'inline-block' : 'none';
+    vN.textContent=w.t; vB.textContent=w.brief; vD.textContent=w.did; vR.textContent=w.result;
+    vP.textContent=w.period; vT.textContent=w.tools;
+    vS.innerHTML=w.shots.map(s=>`<img src="${IMG[s]}" alt="${w.t}">`).join('');
+    if(w.live){ vL.href=w.live; vL.style.display='inline-block'; } else vL.style.display='none';
+    viewer.classList.add('open'); vC.focus();
+  }
+  vC.addEventListener('click', ()=>viewer.classList.remove('open'));
+  viewer.addEventListener('click', e=>{ if(e.target.classList.contains('tint')) viewer.classList.remove('open'); });
+  addEventListener('keydown', e=>{ if(e.key==='Escape') viewer.classList.remove('open'); });
+
+  /* ---- chrome ---- */
+  const prog=document.getElementById('progress');
+  addEventListener('scroll', ()=>{
+    const h=document.documentElement, max=h.scrollHeight-h.clientHeight;
+    prog.style.width=(max>0 ? h.scrollTop/max*100 : 0)+'%';
+  },{passive:true});
+
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.bar i[data-w]').forEach(b=>{ b.style.width=b.dataset.w+'%'; });
+      io.unobserve(e.target);
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal,.skills').forEach(el=>io.observe(el));
+
+  /* 落書きの線は、画面に入ってから引かれる */
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.crayon').forEach((el,i)=>{
+    let len=0; try{ len=el.getTotalLength(); }catch(e){}
+    if(!len || reduce) return;
+    el.style.strokeDasharray=len; el.style.strokeDashoffset=len;
+    setTimeout(()=>{
+      el.style.transition=`stroke-dashoffset ${Math.min(1600, 400+len)}ms cubic-bezier(.3,.8,.4,1)`;
+      el.style.strokeDashoffset=0;
+    }, 300 + i*90);
+  });
+})();
+</script>
+
+
+<script>
+/* ============ 出現の合図（盤面では常時表示） ============ */
+(function(){
+  document.querySelectorAll('.sec-top h2').forEach(h=>{
+    if(!h.querySelector('span')) h.innerHTML = `<span>${h.textContent}</span>`;
+  });
+  const mrow = document.getElementById('mrow');
+  if(mrow){
+    const unit = '採用されました — ADOPTED — ';
+    mrow.innerHTML = `<span>${unit.repeat(4)}</span><span>${unit.repeat(4)}</span>`;
+  }
+  document.querySelectorAll('.reveal,.wipe,.rise').forEach(el=>el.classList.add('in'));
+})();
+</script>
+
+<script>
+/* ============ やわらかい光 ============ */
+(function(){
+  const g = document.getElementById('glow');
+  if(!g || matchMedia('(hover:none)').matches) return;
+  let x = innerWidth*.5, y = innerHeight*.45, tx = x, ty = y, on = false;
+  addEventListener('pointermove', e=>{
+    tx = e.clientX; ty = e.clientY;
+    if(!on){ on = true; g.classList.add('on'); }
+  }, {passive:true});
+  addEventListener('pointerleave', ()=>{ g.classList.remove('on'); on = false; });
+  (function loop(){
+    requestAnimationFrame(loop);
+    x += (tx-x)*0.055; y += (ty-y)*0.055;
+    g.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px)`;
+  })();
+})();
+</script>
+
+<script>
+/* ============ 付箋（つまんで動かす・はがす） ============ */
+(function(){
+  const wins = [...document.querySelectorAll('.win')];
+  const reopen = document.getElementById('reopen');
+  if(!wins.length) return;
+  let z = 6;
+  const sync = ()=>{ reopen.hidden = !wins.every(w=>w.classList.contains('closed')); };
+  const close = w =>{ w.classList.add('closed'); sync(); };
+
+  wins.forEach(w=>{
+    w.querySelector('.wx').addEventListener('click', ()=>close(w));
+    const no = w.querySelector('.wno');
+    if(no) no.addEventListener('click', ()=>close(w));
+    const bar = w.querySelector('.wbar');
+    let sx=0, sy=0, ox=0, oy=0, on=false;
+    bar.addEventListener('pointerdown', e=>{
+      if(e.target.closest('.wx')) return;
+      if(innerWidth <= 860) return;
+      on = true; w.classList.add('drag'); w.style.zIndex = ++z;
+      const r = w.getBoundingClientRect();
+      const host = w.parentElement.getBoundingClientRect();
+      ox = r.left - host.left; oy = r.top - host.top;
+      sx = e.clientX; sy = e.clientY;
+      w.style.left = ox+'px'; w.style.top = oy+'px';
+      w.style.right = 'auto'; w.style.bottom = 'auto';
+      bar.setPointerCapture(e.pointerId); e.preventDefault(); e.stopPropagation();
+    });
+    bar.addEventListener('pointermove', e=>{
+      if(!on) return;
+      const k = (window.__zoom && window.__zoom()) || 1;
+      w.style.left = (ox + (e.clientX - sx)/k)+'px';
+      w.style.top  = (oy + (e.clientY - sy)/k)+'px';
+    });
+    bar.addEventListener('pointerup', ()=>{ on=false; w.classList.remove('drag'); });
+  });
+  reopen.addEventListener('click', ()=>{ wins.forEach(w=>w.classList.remove('closed')); sync(); });
+  sync();
+})();
+</script>
+
+<script>
+/* ============ 盤面をつかんで動かす ============ */
+(function(){
+  const vp = document.getElementById('viewport');
+  const cv = document.getElementById('canvas');
+  if(!vp || !cv || innerWidth <= 860) return;
+
+  const A0 = {
+    top:{x:0,y:0,w:1780,h:1020}, about:{x:0,y:1170,w:1220,h:760},
+    works:{x:1930,y:0,w:1640,h:1600}, skills:{x:0,y:2080,w:1220,h:760},
+    contact:null
+  };
+  const AREAS = new Proxy({}, {get:(_,k)=> (window.__AREAS && window.__AREAS[k]) || A0[k]});
+
+  let x=0, y=0, k=1, tx=0, ty=0, tk=1;
+  const MIN=.2, MAX=1.9;
+  window.__zoom = ()=>k;
+
+  function apply(){
+    cv.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0) scale(${k.toFixed(3)})`;
+    const z = document.getElementById('zoomVal');
+    if(z) z.textContent = Math.round(k*100) + '%';
+  }
+  function ease(){
+    x += (tx-x)*.16; y += (ty-y)*.16; k += (tk-k)*.16;
+    apply();
+    if(Math.abs(tx-x)>.4 || Math.abs(ty-y)>.4 || Math.abs(tk-k)>.002) requestAnimationFrame(ease);
+    else { x=tx; y=ty; k=tk; apply(); }
+  }
+  function focus(name, pad){
+    const a = AREAS[name]; if(!a) return;
+    pad = pad || 90;
+    tk = Math.max(MIN, Math.min(MAX, Math.min((innerWidth-pad*2)/a.w, (innerHeight-pad*2-100)/a.h)));
+    tx = innerWidth/2  - (a.x + a.w/2)*tk;
+    ty = innerHeight/2 - (a.y + a.h/2)*tk + 14;
+    requestAnimationFrame(ease);
+  }
+  function fitAll(){
+    const B = window.__BOARD || {w:4000, h:3000}, pad=60;
+    tk = Math.max(MIN, Math.min((innerWidth-pad*2)/B.w, (innerHeight-pad*2-100)/B.h));
+    tx = innerWidth/2  - (B.w/2)*tk;
+    ty = innerHeight/2 - (B.h/2)*tk;
+    requestAnimationFrame(ease);
+  }
+  window.__focus = focus;
+  window.__pan = (dx,dy)=>{ x = tx = x + dx; y = ty = y + dy; apply(); };
+
+  let dragging=false, sx=0, sy=0, ox=0, oy=0;
+  vp.addEventListener('pointerdown', e=>{
+    if(e.target.closest('a, button, .win, .viewer, .hud, .stick, #stage')) return;
+    dragging=true; sx=e.clientX; sy=e.clientY; ox=x; oy=y;
+    vp.classList.add('grabbing'); vp.setPointerCapture(e.pointerId);
+  });
+  vp.addEventListener('pointermove', e=>{
+    if(!dragging) return;
+    x = tx = ox + (e.clientX - sx); y = ty = oy + (e.clientY - sy); apply();
+  });
+  const stop = ()=>{ dragging=false; vp.classList.remove('grabbing'); };
+  vp.addEventListener('pointerup', stop);
+  vp.addEventListener('pointercancel', stop);
+
+  vp.addEventListener('wheel', e=>{
+    e.preventDefault();
+    if(e.shiftKey){ x = tx = x - e.deltaY; y = ty = y - e.deltaX; apply(); return; }
+    const f = Math.exp(-e.deltaY * 0.0016);
+    const nk = Math.max(MIN, Math.min(MAX, k * f));
+    const r = vp.getBoundingClientRect();
+    const px = e.clientX - r.left, py = e.clientY - r.top;
+    x = tx = px - (px - x) * (nk/k);
+    y = ty = py - (py - y) * (nk/k);
+    k = tk = nk; apply();
+  }, {passive:false});
+
+  document.querySelectorAll('.hud [data-go]').forEach(b=>
+    b.addEventListener('click', ()=> focus(b.dataset.go)));
+  document.getElementById('fitAll').addEventListener('click', fitAll);
+  const zoomBy = f =>{
+    tk = Math.max(MIN, Math.min(MAX, k*f));
+    tx = innerWidth/2 - (innerWidth/2 - x)*(tk/k);
+    ty = innerHeight/2 - (innerHeight/2 - y)*(tk/k);
+    requestAnimationFrame(ease);
+  };
+  document.getElementById('zoomIn').addEventListener('click', ()=>zoomBy(1.25));
+  document.getElementById('zoomOut').addEventListener('click', ()=>zoomBy(1/1.25));
+
+  document.addEventListener('click', e=>{
+    const a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    const id = a.getAttribute('href').slice(1);
+    if(A0[id]){ e.preventDefault(); focus(id); }
+  });
+  addEventListener('keydown', e=>{
+    if(e.key === '0') fitAll();
+    if(e.key === '1') focus('top');
+  });
+
+  document.addEventListener('board:laid', ()=>{ if(!window.__once){ window.__once=1; focus('top',40); } });
+  setTimeout(()=>{ if(!window.__once){ window.__once=1; focus('top',40); } }, 300);
+
+  const hint = document.getElementById('panhint');
+  setTimeout(()=>hint && hint.classList.add('off'), 6000);
+  vp.addEventListener('pointerdown', ()=>hint && hint.classList.add('off'), {once:true});
+})();
+</script>
+
+<script>
+/* ============ 板を実測して並べる（TOPが中心） ============ */
+(function(){
+  if(innerWidth <= 860) return;
+  const cv = document.getElementById('canvas');
+  const links = document.querySelector('.links');
+  if(!cv) return;
+  const top_ = document.querySelector('#canvas .top');
+  const P = {
+    works:   document.getElementById('works'),
+    about:   document.getElementById('about'),
+    skills:  document.getElementById('skills'),
+    foot:    document.querySelector('#canvas footer')
+  };
+  const place = (el,x,y)=>{ el.style.left=x+'px'; el.style.top=y+'px'; };
+
+  function arrow(x,y,dx,dy){
+    const a = Math.atan2(dy,dx), L=13, s=.45;
+    return `M${x} ${y} l${(-L*Math.cos(a-s)).toFixed(1)} ${(-L*Math.sin(a-s)).toFixed(1)} M${x} ${y} l${(-L*Math.cos(a+s)).toFixed(1)} ${(-L*Math.sin(a+s)).toFixed(1)}`;
+  }
+  function drawLinks(){
+    if(!links) return;
+    const A = window.__AREAS, B = window.__BOARD;
+    links.setAttribute('viewBox', `0 0 ${B.w} ${B.h}`);
+    links.style.width = B.w+'px'; links.style.height = B.h+'px';
+    const cx = A.top.x + A.top.w/2;
+    const seg = [
+      [A.top.x + A.top.w, A.top.y + A.top.h/2, A.works.x, A.works.y + A.works.h/2],
+      [A.top.x,           A.top.y + A.top.h/2, A.about.x + A.about.w, A.about.y + A.about.h/2],
+      [cx,                A.top.y + A.top.h,   A.skills.x + A.skills.w/2,   A.skills.y]
+    ];
+    let d='', h='';
+    seg.forEach(([x1,y1,x2,y2])=>{
+      const mx=(x1+x2)/2, my=(y1+y2)/2;
+      d += (Math.abs(y2-y1) > Math.abs(x2-x1))
+        ? `M${x1} ${y1} C ${x1} ${my}, ${x2} ${my}, ${x2} ${y2} `
+        : `M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2} `;
+      h += arrow(x2,y2, x2-x1, y2-y1) + ' ';
+    });
+    links.innerHTML = `<g class="sk thin dash"><path d="${d}"/></g><g class="sk hot"><path d="${h}"/></g>`;
+  }
+
+  function layout(){
+    const GAP = 170, PAD = 140;
+    const topW = 1780, topH = 1020;
+    const aw=P.about.offsetWidth,  ah=P.about.offsetHeight;
+    const ww=P.works.offsetWidth,  wh=P.works.offsetHeight;
+    const sw=P.skills.offsetWidth, sh=P.skills.offsetHeight;
+    const fw=P.foot.offsetWidth,   fh=P.foot.offsetHeight;
+
+    /* TOP を中心に、四方へ */
+    const ox = PAD + aw + GAP;
+    const oy = PAD;
+
+    place(top_,      ox, oy);
+    place(P.about,   ox - aw - GAP,      oy + (topH-ah)/2);
+    place(P.works,   ox + topW + GAP,    oy + (topH-wh)/2);
+    place(P.skills,  ox + (topW-sw)/2,   oy + topH + GAP);
+    place(P.foot,    ox + (topW-fw)/2,   oy + topH + GAP + sh + GAP);
+
+    const W = ox + topW + GAP + ww + PAD;
+    const H = Math.max(oy + topH + GAP + sh + GAP + fh,
+                       oy + (topH+wh)/2, oy + (topH+ah)/2) + PAD;
+    cv.style.width = W+'px'; cv.style.height = H+'px';
+
+    window.__AREAS = {
+      top:     {x:ox, y:oy, w:topW, h:topH},
+      about:   {x:ox-aw-GAP,    y:oy+(topH-ah)/2, w:aw, h:ah},
+      works:   {x:ox+topW+GAP,  y:oy+(topH-wh)/2, w:ww, h:wh},
+      skills:  {x:ox+(topW-sw)/2, y:oy+topH+GAP,  w:sw, h:sh}
+    };
+    window.__BOARD = {w:W, h:H};
+    drawLinks();
+    document.dispatchEvent(new CustomEvent('board:laid'));
+  }
+
+  layout();
+  addEventListener('load', layout);
+  addEventListener('resize', layout);
+  const g = document.getElementById('workGrid');
+  if(g) new MutationObserver(()=>layout()).observe(g, {childList:true});
+})();
+</script>
+
+<script>
+/* 操作スティック */
+(function(){
+  const st = document.getElementById('stick');
+  if(!st || innerWidth <= 860) return;
+  const knob = st.querySelector('.knob');
+  let on=false, vx=0, vy=0, id=null;
+
+  st.addEventListener('pointerdown', e=>{
+    on=true; id=e.pointerId; st.classList.add('on');
+    st.setPointerCapture(id); move(e); loop();
+  });
+  st.addEventListener('pointermove', e=>{ if(on) move(e); });
+  const off = ()=>{ on=false; st.classList.remove('on'); vx=vy=0;
+    knob.style.transform='translate(0,0)'; };
+  st.addEventListener('pointerup', off);
+  st.addEventListener('pointercancel', off);
+
+  function move(e){
+    const r = st.getBoundingClientRect();
+    let dx = e.clientX - (r.left+r.width/2);
+    let dy = e.clientY - (r.top +r.height/2);
+    const max = r.width/2 - 22, d = Math.hypot(dx,dy);
+    if(d > max){ dx = dx/d*max; dy = dy/d*max; }
+    knob.style.transform = `translate(${dx}px, ${dy}px)`;
+    vx = -dx/max; vy = -dy/max;
+  }
+  function loop(){
+    if(!on) return;
+    requestAnimationFrame(loop);
+    if(window.__pan) window.__pan(vx*17, vy*17);
+  }
+})();
+</script>
+</body>
+</html>
