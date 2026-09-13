@@ -1987,8 +1987,16 @@
     if(e.key === '1') focus('top');
   });
 
-  document.addEventListener('board:laid', ()=>{ if(!window.__once){ window.__once=1; focus('top',40); } });
-  setTimeout(()=>{ if(!window.__once){ window.__once=1; focus('top',40); } }, 300);
+  /* フォントと画像が揃うまでは初回フォーカスを保留し、崩れた位置で一瞬止まるのを防ぐ */
+  const settled = Promise.all([
+    document.readyState === 'complete' ? Promise.resolve() : new Promise(r=>addEventListener('load', r, {once:true})),
+    (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve()
+  ]);
+  document.addEventListener('board:laid', ()=>{
+    if(window.__once) return;
+    settled.then(()=>{ if(!window.__once){ window.__once=1; focus('top',40); } });
+  });
+  setTimeout(()=>{ if(!window.__once){ window.__once=1; focus('top',40); } }, 1500);
 
   const hint = document.getElementById('panhint');
   setTimeout(()=>hint && hint.classList.add('off'), 6000);
@@ -2075,6 +2083,7 @@
   layout();
   addEventListener('load', layout);
   addEventListener('resize', layout);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
   const g = document.getElementById('workGrid');
   if(g) new MutationObserver(()=>layout()).observe(g, {childList:true});
 })();
